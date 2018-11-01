@@ -1,0 +1,3 @@
+---
+- name: Install Docker on Alpine
+  shell: apk update && apk add docker
