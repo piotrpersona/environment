@@ -1,0 +1,3 @@
+---
+- name: Install vim on Debian/Ubuntu
+  shell: apt-get update && apt-get install -y vim
