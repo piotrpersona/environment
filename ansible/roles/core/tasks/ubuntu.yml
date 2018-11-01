@@ -1,0 +1,12 @@
+---
+- name: Install packages to allow apt to use a repository over HTTPS
+  shell: |
+    apt-get update \
+    && apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    software-properties-common
+- name: Install curl
+  include_role:
+    name: curl
+    tasks_from: main

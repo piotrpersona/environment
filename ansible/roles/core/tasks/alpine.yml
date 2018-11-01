@@ -1,0 +1,5 @@
+---
+- name: Install curl on Alpine
+  include_role:
+    name: curl
+    tasks_from: main

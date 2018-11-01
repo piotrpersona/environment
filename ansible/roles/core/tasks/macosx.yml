@@ -1,0 +1,9 @@
+---
+- name: Install curl
+  include_role:
+    name: curl
+    tasks_from: main
+- name: Install homebrew
+  include_role:
+    name: homebrew
+    tasks_from: main
