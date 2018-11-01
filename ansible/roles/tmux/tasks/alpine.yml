@@ -1,0 +1,3 @@
+---
+- name: Install tmux on Alpine
+  shell: apk update && apk add tmux

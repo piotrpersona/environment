@@ -1,0 +1,3 @@
+---
+- name: Install tmux on Mac OS X
+  shell: brew reinstall tmux
