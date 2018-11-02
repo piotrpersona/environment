@@ -5,9 +5,10 @@
     - core
     - git
     - zsh
-    - python
     - vim
     - tmux
     - nodejs
+    - python
+    - ansible
     - docker
     - atom

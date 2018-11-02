@@ -1,0 +1,5 @@
+---
+- name: Install python
+  role: python
+- name: Install ansible on Debian/Ubuntu
+  shell: pip install ansible
