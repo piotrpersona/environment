@@ -1,5 +1,7 @@
 ---
 - name: Install python
-  role: python
+  include_role:
+    name: python
+    tasks_from: main
 - name: Install ansible on Debian/Ubuntu
   shell: pip install ansible
