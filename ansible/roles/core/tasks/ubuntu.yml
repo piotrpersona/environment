@@ -10,3 +10,7 @@
   include_role:
     name: curl
     tasks_from: main
+- name: Install wget
+  include_role:
+    name: wget
+    tasks_from: main
