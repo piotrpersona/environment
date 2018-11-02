@@ -1,8 +1,11 @@
 #!/bin/bash
+
+ANSIBLE_HOME=../ansible
+
 deploy_environment() {
   ansible-playbook \
-  -i ansible/invetory \
-  ansible/setup_environment.yml
+  -i "${ANSIBLE_HOME}/inventory.ini" \
+  "${ANSIBLE_HOME}/setup_environment.yml"
 }
 
 main() {
