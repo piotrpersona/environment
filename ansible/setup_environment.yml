@@ -10,9 +10,3 @@
     - nodejs
     - docker
     - atom
-  tasks:
-  - name: Install {{ item }}
-    include_role:
-      name: "{{ item }}"
-      tasks_from: main
-    loop: "{{ roles }}"
