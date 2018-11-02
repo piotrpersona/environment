@@ -1,36 +1,18 @@
 ---
 - name: Setup environment
   hosts: environment
+  roles:
+    - core
+    - git
+    - zsh
+    - vim
+    - tmux
+    - nodejs
+    - docker
+    - atom
   tasks:
-  - name: Install core
+  - name: Install {{ item }}
     include_role:
-      name: core
+      name: "{{ item }}"
       tasks_from: main
-  - name: Install git
-    include_role:
-      name: git
-      tasks_from: main
-  - name: Install zsh
-    include_role:
-      name: zsh
-      tasks_from: main
-  - name: Install vim
-    include_role:
-      name: vim
-      tasks_from: main
-  - name: Install tmux
-    include_role:
-      name: tmux
-      tasks_from: main
-  - name: Install Node.js
-    include_role:
-      name: nodejs
-      tasks_from: main
-  - name: Install Docker
-    include_role:
-      name: docker
-      tasks_from: main
-  - name: Install Atom
-    include_role:
-      name: atom
-      tasks_from: main
+    loop: "{{ roles }}"
