@@ -29,7 +29,6 @@ run_example_playbook() {
   ansible-playbook \
     -i "${TEST_INVENTORY}" \
     "${playbook}"
-  echo "${?}"
 }
 
 remove_test_inventory() {
