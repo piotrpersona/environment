@@ -2,4 +2,4 @@
 - name: Add atom PPA
   shell: sudo add-apt-repository ppa:webupd8team/atom
 - name: Install atom on Debian/Ubuntu
-  shell: apt update && apt install -y atom
+  shell: sudo apt update && sudo apt install -y atom

@@ -1,8 +1,8 @@
 ---
 - name: Install Python on Debian/Ubuntu
   shell: |
-    apt-get update &&
-    apt-get install -y \
+    sudo apt-get update &&
+    sudo apt-get install -y \
     python \
     python-pip \
     && pip install --upgrade pip
