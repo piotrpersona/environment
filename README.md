@@ -1,4 +1,4 @@
-Developer environment
+Developer environment [![Build Status](https://travis-ci.org/piotrpersona/environment.svg?branch=master)](https://travis-ci.org/piotrpersona/environment)
 =====================
 
 Dependencies
