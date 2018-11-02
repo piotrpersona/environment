@@ -1,0 +1,5 @@
+---
+- name: Install Python on Alpine
+  shell: |
+    apk update \
+    && apk add python \

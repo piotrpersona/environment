@@ -5,6 +5,7 @@
     - core
     - git
     - zsh
+    - python
     - vim
     - tmux
     - nodejs
