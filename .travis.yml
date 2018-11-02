@@ -1,9 +1,11 @@
 language: python
 python: "2.7"
 sudo: required
+os:
+- ubuntu
 install:
 - pip install ansible
 services:
 - docker
-script: ./test.sh
-
+script: ./tests/test_inside_ubuntu_container.sh
+script: ./tests/test_on_localhost.sh
