@@ -29,6 +29,7 @@ run_example_playbook() {
   ansible-playbook \
     -i "${TEST_INVENTORY}" \
     "${playbook}"
+  echo "${?}"
 }
 
 remove_test_inventory() {
@@ -60,12 +61,14 @@ main() {
   local docker_target_id="$(run_target)"
   display_tips "${docker_target_id:0:8}"
   run_example_playbook "${docker_target_id}"
+  local exit_code="${?}"
   remove_test_inventory
   stop_target "${docker_target_id}"
   # remove_target
   display_tips "${docker_target_id:0:8}"
 
   popd > /dev/null 2>&1
+  exit "${exit_code}"
 }
 
 main "${@}"
