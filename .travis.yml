@@ -7,5 +7,11 @@ install:
 - pip install ansible
 services:
 - docker
-script: ./tests/test_inside_ubuntu_container.sh
-script: ./tests/test_on_localhost.sh
+jobs:
+  include:
+  - stage: tests
+    name: Deploy on ubuntu docker container
+    script: ./tests/test_inside_ubuntu_container.sh
+  - stage: deploy
+    name: Deploy on localhost
+    script: ./tests/test_on_localhost.sh
