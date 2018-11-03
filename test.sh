@@ -23,7 +23,7 @@ run_target() {
 run_example_playbook() {
   echo "Running playbook inside: ${1:0:8} container"
   local docker_container_id="${1}"
-  local playbook="${ANSIBLE_HOME}/setup_environment.yml"
+  local playbook="${ANSIBLE_HOME}/deploy_environment.yml"
   printf "[environment]\n${docker_container_id} ansible_connection=docker" >> "${TEST_INVENTORY}"
   ansible-playbook \
     -i "${TEST_INVENTORY}" \

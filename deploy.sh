@@ -5,7 +5,7 @@ ANSIBLE_HOME=../ansible
 deploy_environment() {
   ansible-playbook \
   -i "${ANSIBLE_HOME}/inventory.ini" \
-  "${ANSIBLE_HOME}/setup_environment.yml"
+  "${ANSIBLE_HOME}/deploy_environment.yml"
 }
 
 main() {
