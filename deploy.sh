@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ANSIBLE_HOME=../ansible
+ANSIBLE_HOME=ansible
 
 deploy_environment() {
   ansible-playbook \

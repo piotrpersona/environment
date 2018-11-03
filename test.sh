@@ -1,7 +1,7 @@
 #!/bin/bash
 TARGET_IMAGE=philm/ansible_target:latest
 TEST_INVENTORY=/tmp/test_inventory.ini
-ANSIBLE_HOME=../ansible
+ANSIBLE_HOME=ansible
 
 build_target() {
   docker pull "${TARGET_IMAGE}"
