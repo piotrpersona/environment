@@ -5,3 +5,5 @@
   when: ansible_distribution == 'MacOSX'
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'
+- include: install_packages.yml
+- include: install_themes.yml

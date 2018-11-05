@@ -1,0 +1,19 @@
+---
+- name: Install Ask Stack Overflow atom package
+  shell: apm install ask-stack
+- name: Install Jinja2 templating support atom package
+  shell: apm install atom-jinja2
+- name: Install Auto Save Onchange atom package
+  shell: apm install autosave-onchange
+- name: Install Language Docker support atom package
+  shell: apm install language-docker
+- name: Install Language Generic Config support atom package
+  shell: apm install language-generic-config
+- name: Install Language Ini support atom package
+  shell: apm install language-ini
+- name: Install Atom Beautify atom package
+  shell: apm install atom-beautify
+- name: Install Pigments atom package
+  shell: apm install pigments
+- name: Install File Icons atom package
+  shell: apm install file-icons
