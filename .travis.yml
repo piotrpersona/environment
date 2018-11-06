@@ -1,17 +1,18 @@
+---
 language: python
 python: "2.7"
 sudo: required
 os:
-- ubuntu
+  - ubuntu
 install:
-- pip install ansible
+  - pip install ansible
 services:
-- docker
+  - docker
 jobs:
   include:
-  - stage: tests
-    name: Deploy on ubuntu docker container
-    script: ./test.sh
-  - stage: deploy
-    name: Deploy on localhost
-    script: ./deploy.sh
+    - stage: tests
+      name: Deploy on ubuntu docker container
+      script: ./test.sh
+    - stage: deploy
+      name: Deploy on localhost
+      script: ./deploy.sh
