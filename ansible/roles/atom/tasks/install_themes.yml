@@ -1,5 +1,5 @@
 ---
 - name: Install Material Theme
-  shell: apm atom-material-syntax atom-material-ui
+  shell: apm install atom-material-syntax atom-material-ui
 - name: Install Material Theme
-  shell: apm city-lights-syntax city-lights-ui
+  shell: apm install city-lights-syntax city-lights-ui
