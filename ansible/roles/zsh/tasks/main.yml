@@ -5,3 +5,22 @@
   when: ansible_distribution == 'MacOSX'
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'
+- name: Change shell to zsh
+  shell: chsh -s $( which zsh )
+- name: Create {{ shell_directory }} directory
+  file:
+    state: directory
+    path: "{{ shell_directory }}"
+- name: Create {{ shell_directory }}/aliases directory
+  file:
+    state: directory
+    path: "{{ shell_directory }}/aliases"
+- name: Upload aliases into {{ shell_directory }}/aliases
+  copy:
+    src: .shell/aliases/
+    dest: "{{ shell_directory }}/aliases/"
+    directory_mode: yes
+- name: Upload zshrc
+  copy:
+    src: .zshrc
+    dest: ~/
