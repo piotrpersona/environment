@@ -3,6 +3,10 @@ TARGET_IMAGE=philm/ansible_target:latest
 TEST_INVENTORY=/tmp/test_inventory.ini
 ANSIBLE_HOME=ansible
 
+handle_arguments() {
+  local arguments="${@}"
+}
+
 build_target() {
   docker pull "${TARGET_IMAGE}"
 }
@@ -48,8 +52,9 @@ display_tips() {
   echo "************************************************"
   echo "TIPS"
   echo "************************************************"
-  display_connection_command "${1}"
-  display_rm_container_command "${1}"
+  local docker_container_id="${1:0:8}"
+  display_connection_command "${docker_container_id}"
+  display_rm_container_command "${docker_container_id}"
 }
 
 main() {
@@ -57,16 +62,16 @@ main() {
 
   build_target
   local docker_target_id="$(run_target)"
-  display_tips "${docker_target_id:0:8}"
+
+  display_tips "${docker_target_id}"
   run_example_playbook "${docker_target_id}"
   local exit_code="${?}"
   remove_test_inventory
   stop_target "${docker_target_id}"
-  # remove_target
-  display_tips "${docker_target_id:0:8}"
+  display_tips "${docker_target_id}"
 
-  popd > /dev/null 2>&1
   exit "${exit_code}"
+  popd > /dev/null 2>&1
 }
 
 main "${@}"
