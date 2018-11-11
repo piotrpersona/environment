@@ -17,3 +17,5 @@
   shell: apm install pigments
 - name: Install File Icons atom package
   shell: apm install file-icons
+- name: Install tmux language atom package
+  shell: apm install language-tmux
