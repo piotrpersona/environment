@@ -6,7 +6,7 @@
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'
 - name: Change shell to zsh
-  shell: chsh $( which zsh )
+  shell: chsh -s $( which zsh )
   become: yes
 - name: Create {{ shell_directory }} directory
   file:
