@@ -5,3 +5,8 @@
   when: ansible_distribution == 'MacOSX'
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'
+- name: Upload tmux config file
+  copy:
+    src: .tmux.conf
+    dest: ~/.tmux.conf
+  become: yes
