@@ -17,4 +17,3 @@
   copy:
     src: .tmux.conf
     dest: ~/.tmux.conf
-  become: yes
