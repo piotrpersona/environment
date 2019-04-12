@@ -5,6 +5,7 @@ set -e
 SCRIPT_HOME="$( dirname "${0}" )"
 ANSIBLE_HOME="${SCRIPT_HOME}/ansible"
 ANSIBLE_VERSION="${ANSIBLE_VERSION:-"2.7.10"}"
+
 export ANSIBLE_NOCOWS=1
 
 display_help() {
@@ -28,6 +29,7 @@ handle_args() {
 
   if [[ ! -f "${INVENTORY}" ]]; then
     echo "ERROR: Please provide valid inventory!"
+    echo "ERROR: Provided inventory: ${INVENTORY}"
     exit 1
   fi
 }
@@ -70,7 +72,7 @@ setup_environment() {
   echo "INFO: Setting up environment"
 
   ansible-playbook \
-  -i "${ANSIBLE_HOME}/inventory.ini" \
+  -i "${INVENTORY}" \
   "${ANSIBLE_HOME}/install.yml"
 }
 
