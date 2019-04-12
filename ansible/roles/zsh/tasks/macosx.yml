@@ -1,3 +1,0 @@
----
-- name: Install zsh on Mac OS X
-  shell: brew reinstall zsh

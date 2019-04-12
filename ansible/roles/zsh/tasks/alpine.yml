@@ -1,3 +1,0 @@
----
-- name: Install zsh on Alpine
-  shell: apk update && apk add zsh
