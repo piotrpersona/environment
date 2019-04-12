@@ -1,3 +1,0 @@
----
-- name: Install wget on Mac OS X
-  shell: brew reinstall wget

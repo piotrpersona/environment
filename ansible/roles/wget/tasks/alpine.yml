@@ -1,3 +1,0 @@
----
-- name: Install wget on Alpine
-  shell: apk update && apk add wget
