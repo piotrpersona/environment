@@ -4,10 +4,10 @@
 
 - name: Create VS Code Path
   file:
-    path: "{{ vs_code_path }}"
+    path: "{{ vs_code_path }}/User"
     state: directory
 
 - name: Upload settings.json file
   copy:
     src: settings.json
-    dest: "{{ vs_code_path }}/User/settings.json"
+    dest: "{{ vs_code_path }}/settings.json"
