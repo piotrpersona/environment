@@ -12,3 +12,8 @@
 
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'
+
+- name: Upload .vimrc config file
+  copy:
+    src: .vimrc
+    dest: ~/.vimrc
