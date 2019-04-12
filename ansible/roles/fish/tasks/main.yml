@@ -1,0 +1,18 @@
+---
+- name: Check fish existance
+  command: which fish
+  changed_when: false
+  register: fish_status
+
+- include: macosx.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Create fish configuration directory
+  file:
+    path: "{{ fish_config_directory }}"
+    state: directory
+
+- name: Upload fish configuration
+  copy:
+    src: fish
+    dest: "{{ fish_config_directory }}"

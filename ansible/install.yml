@@ -31,3 +31,7 @@
         - golang
         - go
         - language
+    - role: fish
+      tags:
+        - fish
+        - shell

@@ -1,0 +1,4 @@
+---
+- name: Install fish on Mac OS X
+  when: fish_status is failed
+  command: brew install fish
