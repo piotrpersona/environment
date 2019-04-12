@@ -2,4 +2,4 @@
 - name: Install git on Debian/Ubuntu
   command: apt-get install -y git
   become: true
-  when: git_status.rc is failed
+  when: git_status is failed
