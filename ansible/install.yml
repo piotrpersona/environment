@@ -12,5 +12,3 @@
       tags: tmux
     - role: nodejs
       tags: nodejs
-    - role: python
-      tags: python
