@@ -1,0 +1,8 @@
+---
+- include: macosx.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Upload settings.json file
+  copy:
+    src: settings.json
+    dest: "{{ vs_code_path }}/User/settings.json"

@@ -10,6 +10,7 @@
       tags:
         - vim
         - editor
+        - ide
     - role: tmux
       tags: tmux
     - role: nodejs
@@ -18,3 +19,8 @@
       tags:
         - docker
         - containers
+    - role: code
+      tags:
+        - code
+        - editor
+        - ide

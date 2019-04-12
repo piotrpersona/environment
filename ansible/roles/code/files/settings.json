@@ -1,0 +1,55 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 13,
+  "editor.smoothScrolling": true,
+  "editor.scrollBeyondLastLine": false,
+  "files.exclude": {
+      ".vscode": true,
+      "**/__pycache__/**": true,
+      "**/.idea": true,
+      "build": true
+  },
+  "files.autoSave": "afterDelay",
+  "files.insertFinalNewline": true,
+  "files.autoSaveDelay": 300,
+  "window.zoomLevel": 0,
+  "go.autocompleteUnimportedPackages": true,
+  "workbench.colorTheme": "Slack Theme Aubergine",
+  "[javascript]": {
+      "editor.tabSize": 2
+  },
+  "[json]": {
+      "editor.quickSuggestions": {
+      "strings": true
+      },
+      "editor.tabSize": 2
+  },
+  "[html]": {
+      "editor.tabSize": 2
+  },
+  "[css]": {
+      "editor.tabSize": 2
+  },
+  "[babel]": {
+      "editor.tabSize": 2
+  },
+  "[go]": {
+      "editor.formatOnSave": true
+  },
+  "[typescript]": {
+      "editor.tabSize": 2
+  },
+  "[shell]": {
+      "editor.tabSize": 2
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.rulers": [
+      80,
+      120
+  ],
+  "workbench.colorCustomizations": {
+      "editorRuler.foreground": "#ff4081"
+  }
+}
