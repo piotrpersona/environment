@@ -2,6 +2,11 @@
 - include: macosx.yml
   when: ansible_distribution == 'MacOSX'
 
+- name: Create VS Code Path
+  file:
+    path: "{{ vs_code_path }}"
+    state: directory
+
 - name: Upload settings.json file
   copy:
     src: settings.json
