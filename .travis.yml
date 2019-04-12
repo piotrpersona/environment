@@ -10,9 +10,6 @@ services:
   - docker
 jobs:
   include:
-    - stage: tests
-      name: Deploy on ubuntu docker container
-      script: ./test.sh
     - stage: deploy
       name: Deploy on localhost
-      script: ./deploy.sh
+      script: ./setup.sh
