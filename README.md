@@ -8,18 +8,18 @@ The best way to eliminate this issues is to store your
 whole environment in a cloud and automate process of installation and configuration.
 
 
-# Supported Operating Systems
+## Supported Operating Systems
 
 * Linux/Ubuntu
 * Mac OS X (*to be done*)
 
 
-# Dependencies
+## Dependencies
 
 * python 2
 * ansible 2.7.10 (*optional*)
 
-# Usage
+## Usage
 
 Configure environment
 
@@ -29,4 +29,11 @@ Configure environment
 
 ```bash
 ./setup.sh --inventory <PATH TO INVENTORY FILE>
+```
+
+## Example inventory
+
+```ini
+[environment]
+localhost ansible_connection=local
 ```
