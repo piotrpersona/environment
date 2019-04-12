@@ -8,20 +8,10 @@
 - name: Change shell to zsh
   shell: chsh -s $( which zsh )
   become: yes
-- name: Create {{ shell_directory }} directory
-  file:
-    state: directory
-    path: "{{ shell_directory }}"
-- name: Create {{ shell_directory }}/aliases directory
-  file:
-    state: directory
-    path: "{{ shell_directory }}/aliases"
-- name: Upload aliases into {{ shell_directory }}/aliases
-  copy:
-    src: .shell/aliases/
-    dest: "{{ shell_directory }}/aliases/"
-    directory_mode: yes
 - name: Upload zshrc
   copy:
     src: .zshrc
     dest: ~/
+- name: Install oh-my-zsh
+  shell: >
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

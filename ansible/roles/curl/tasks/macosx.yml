@@ -1,3 +1,0 @@
----
-- name: Install curl on Mac OS X
-  shell: brew reinstall curl

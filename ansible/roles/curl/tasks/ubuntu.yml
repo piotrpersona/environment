@@ -1,3 +1,0 @@
----
-- name: Install curl on Debian/Ubuntu
-  shell: sudo apt-get update && sudo apt-get install -y curl

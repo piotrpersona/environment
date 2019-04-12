@@ -1,3 +1,0 @@
----
-- name: Install ansible on Mac OS X
-  shell: brew reinstall ansible

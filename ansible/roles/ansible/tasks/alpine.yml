@@ -1,3 +1,0 @@
----
-- name: Install ansible on Alpine
-  shell: apk update && apk add ansible
