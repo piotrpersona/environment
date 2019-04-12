@@ -10,4 +10,4 @@
     "$(curl -fsSL \
       https://raw.githubusercontent.com/Homebrew/install/master/install \
     )"
-  when: not not homebrew_status.stdout
+  when: homebrew_status is failed
