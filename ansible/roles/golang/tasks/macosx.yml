@@ -1,0 +1,4 @@
+---
+- name: Set OS X distro
+  set_fact:
+    golang_distro: darwin

@@ -1,0 +1,27 @@
+---
+- name: Check go existance
+  command: which go
+  changed_when: false
+  register: golang_status
+
+- include: macosx.yml
+  when: ansible_distribution == 'MacOSX'
+
+- include: linux.yml
+  when: ansible_distribution != 'MacOSX'
+
+- name: Install golang from archive
+  when: golang_status is failed
+  unarchive:
+    remote_src: true
+    src: "https://dl.google.com/go/go{{ golang_version }}.{{ golang_distro }}-amd64.tar.gz"
+    dest: "{{ golang_archive_path }}"
+
+- name: Create golang workspace directories
+  file:
+    path: "{{ golang_root_directory }}/{{ item }}"
+    state: directory
+  with_items:
+    - src
+    - pkg
+    - bin

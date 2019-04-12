@@ -1,0 +1,5 @@
+---
+golang_distro: darwin
+golang_version: 1.12.4
+golang_archive_path: /usr/local/bin/go
+golang_root_directory: ~/go

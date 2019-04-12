@@ -1,0 +1,4 @@
+---
+- name: Set Linux distro
+  set_fact:
+    golang_distro: linux

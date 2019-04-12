@@ -14,7 +14,9 @@
     - role: tmux
       tags: tmux
     - role: nodejs
-      tags: nodejs
+      tags:
+        - nodejs
+        - language
     - role: docker
       tags:
         - docker
@@ -24,3 +26,8 @@
         - code
         - editor
         - ide
+    - role: golang
+      tags:
+        - golang
+        - go
+        - language
