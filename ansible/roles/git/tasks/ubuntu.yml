@@ -1,3 +1,5 @@
 ---
 - name: Install git on Debian/Ubuntu
-  shell: sudo apt-get update && sudo apt-get install -y git
+  command: apt-get install -y git
+  become: true
+  when: git_status.rc is failed

@@ -1,7 +1,14 @@
 ---
+- name: Check git existance
+  command: which git
+  changed_when: false
+  register: git_status
+
 - include: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
+
 - include: macosx.yml
   when: ansible_distribution == 'MacOSX'
+
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'
