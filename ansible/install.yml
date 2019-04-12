@@ -7,10 +7,14 @@
     - role: git
       tags: git
     - role: vim
-      tags: vim
+      tags:
+        - vim
+        - editor
     - role: tmux
       tags: tmux
     - role: nodejs
       tags: nodejs
     - role: docker
-      tags: docker
+      tags:
+        - docker
+        - containers
