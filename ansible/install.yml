@@ -4,21 +4,13 @@
   roles:
     - role: core
       tags: core
-    # - role: git
-    #   tags: git
-    # - role: zsh
-    #   tags: zsh
-    # - role: vim
-    #   tags: vim
-    # - role: tmux
-    #   tags: tmux
-    # - role: nodejs
-    #   tags: nodejs
-    # - role: python
-    #   tags: python
-    # - role: ansible
-    #   tags: ansible
-    # - role: docker
-    #   tags: docker
-    # - role: atom
-    #   tags: atom
+    - role: git
+      tags: git
+    - role: vim
+      tags: vim
+    - role: tmux
+      tags: tmux
+    - role: nodejs
+      tags: nodejs
+    - role: python
+      tags: python
