@@ -1,4 +1,0 @@
----
-- name: Install atom themes
-  shell: apm install {{ item }}-syntax {{ item }}-ui
-  loop: "{{ atom_themes }}"

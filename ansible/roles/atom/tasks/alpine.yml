@@ -1,3 +1,0 @@
----
-- name: Install atom on Alpine
-  shell: echo "atom"

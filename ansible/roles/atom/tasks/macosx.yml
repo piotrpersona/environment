@@ -1,3 +1,0 @@
----
-- name: Install atom on Mac OS X
-  shell: brew cask install atom
