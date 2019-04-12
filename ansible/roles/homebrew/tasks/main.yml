@@ -1,3 +1,0 @@
----
-- include: macosx.yml
-  when: ansible_distribution == 'MacOSX'
