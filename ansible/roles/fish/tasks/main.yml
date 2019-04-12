@@ -2,7 +2,7 @@
 - name: Check fish existance
   command: which fish
   changed_when: false
-  failed_when: faslse
+  failed_when: false
   register: fish_status
 
 - include: macosx.yml
