@@ -2,6 +2,7 @@
 - name: Check Docker existance
   command: which Docker
   changed_when: false
+  failed_when: false
   register: docker_status
 
 - include: ubuntu.yml
