@@ -12,3 +12,5 @@
       tags: tmux
     - role: nodejs
       tags: nodejs
+    - role: docker
+      tags: docker

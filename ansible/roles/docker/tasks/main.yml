@@ -1,7 +1,14 @@
 ---
+- name: Check Docker existance
+  command: which Docker
+  changed_when: false
+  register: docker_status
+
 - include: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
+
 - include: macosx.yml
   when: ansible_distribution == 'MacOSX'
+
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'

@@ -1,3 +1,5 @@
 ---
 - name: Install Docker on Mac OS X
-  shell: brew reinstall docker
+  when: docker_status is failed
+  command: brew install docker
+  become: true

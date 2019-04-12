@@ -1,3 +1,5 @@
 ---
 - name: Install Docker on Alpine
-  shell: apk update && apk add docker
+  when: docker_status is failed
+  command: apk add docker
+  become: true
