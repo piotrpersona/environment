@@ -1,3 +1,5 @@
 ---
 - name: Install Node.js on Alpine
-  shell: apk update && apk add nodejs npm
+  when: nodejs_status is failed
+  command: apk add nodejs npm
+  become: true

@@ -1,7 +1,14 @@
 ---
+- name: Check nodejs existance
+  command: which node
+  changed_when: false
+  register: nodejs_status
+
 - include: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
+
 - include: macosx.yml
   when: ansible_distribution == 'MacOSX'
+
 - include: alpine.yml
   when: ansible_distribution == 'Alpine'
