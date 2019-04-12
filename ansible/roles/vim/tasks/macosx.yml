@@ -1,3 +1,5 @@
 ---
 - name: Install vim on Mac OS X
-  shell: brew reinstall vim
+  when: vim_status is failed
+  command: brew install vim
+  become: true

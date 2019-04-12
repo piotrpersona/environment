@@ -1,3 +1,5 @@
 ---
 - name: Install vim on Alpine
-  shell: apk update && apk add vim
+  when: vim_status is failed
+  command: apk add vim
+  become: true
