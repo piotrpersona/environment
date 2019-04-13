@@ -10,9 +10,9 @@ whole environment in a cloud and automate process of installation and configurat
 
 ## Supported Operating Systems
 
-* Linux/Ubuntu
-* Mac OS X (*to be done*)
-
+* Mac OS X
+* Ubuntu
+* Alpine Linux
 
 ## Dependencies
 
@@ -36,4 +36,12 @@ Configure environment
 ```ini
 [environment]
 localhost ansible_connection=local
+```
+
+## Testing
+
+Below command will run tests on supported linux distros.
+
+```bash
+./tests/test.sh
 ```
