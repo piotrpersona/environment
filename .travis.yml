@@ -10,10 +10,6 @@ services:
   - docker
 jobs:
   include:
-    - stage: deploy
-      name: Deploy on Mac OS X
-      script: ./setup.sh
-
     - stage: test
       name: Test other distros
       script: ./tests/test.sh
