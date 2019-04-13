@@ -1,5 +1,0 @@
----
-- name: Install Node.js on Mac OS X
-  when: nodejs_status is failed
-  command: brew install nodejs
-  become: true

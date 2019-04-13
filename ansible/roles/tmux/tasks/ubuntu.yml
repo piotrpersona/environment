@@ -1,5 +1,0 @@
----
-- name: Install tmux on Debian/Ubuntu
-  when: tmux_status is failed
-  command: apt-get install -y tmux
-  become: true

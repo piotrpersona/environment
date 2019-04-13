@@ -1,5 +1,0 @@
----
-- name: Install tmux on Alpine
-  when: tmux_status is failed
-  command: apk add tmux
-  become: true

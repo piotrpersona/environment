@@ -1,5 +1,0 @@
----
-- name: Install Docker on Mac OS X
-  when: docker_status is failed
-  command: brew install docker
-  become: true

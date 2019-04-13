@@ -1,14 +1,24 @@
 ---
-- name: Check nodejs existance
-  command: which node
-  changed_when: false
-  register: nodejs_status
-
-- include: ubuntu.yml
-  when: ansible_distribution == 'Ubuntu'
-
-- include: macosx.yml
+- name: Install Node.js on Mac OS X
   when: ansible_distribution == 'MacOSX'
+  homebrew:
+    name:
+      - node
+      - npm
+    state: present
 
-- include: alpine.yml
+- name: Install Node.js on Ubuntu
+  when: ansible_distribution == 'Ubuntu'
+  apt:
+    name:
+      - nodejs
+      - npm
+    state: present
+
+- name: Install Node.js on Alpine Linux
   when: ansible_distribution == 'Alpine'
+  apk:
+    name:
+      - nodes
+      - npm
+    state: present

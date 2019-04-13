@@ -1,4 +1,0 @@
----
-- name: Set OS X VS Code Path
-  set_fact:
-    vs_code_path: ~/Library/Application Support/Code

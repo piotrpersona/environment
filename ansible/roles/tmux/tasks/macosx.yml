@@ -1,5 +1,0 @@
----
-- name: Install tmux on Mac OS X
-  when: tmux_status is failed
-  command: brew install tmux
-  become: true

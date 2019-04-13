@@ -1,12 +1,21 @@
 ---
-- name: Check fish existance
-  command: which fish
-  changed_when: false
-  failed_when: false
-  register: fish_status
-
-- include: macosx.yml
+- name: Install fish on Mac OS X
   when: ansible_distribution == 'MacOSX'
+  homebrew:
+    name: fish
+    state: present
+
+- name: Install fish on Ubuntu
+  when: ansible_distribution == 'Ubuntu'
+  apt:
+    name: fish
+    state: present
+
+- name: Install fish on Alpine Linux
+  when: ansible_distribution == 'Alpine'
+  apk:
+    name: fish
+    state: present
 
 - name: Create fish configuration directory
   file:

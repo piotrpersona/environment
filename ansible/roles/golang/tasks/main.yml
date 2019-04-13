@@ -2,13 +2,18 @@
 - name: Check go existance
   command: which go
   changed_when: false
+  failed_when: false
   register: golang_status
 
-- include: macosx.yml
+- name: Set OS X distro
   when: ansible_distribution == 'MacOSX'
+  set_fact:
+    golang_distro: darwin
 
-- include: linux.yml
+- name: Set Linux distro
   when: ansible_distribution != 'MacOSX'
+  set_fact:
+    golang_distro: linux
 
 - name: Install golang from archive
   when: golang_status is failed

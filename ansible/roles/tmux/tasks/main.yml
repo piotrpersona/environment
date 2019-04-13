@@ -1,17 +1,21 @@
 ---
-- name: Check tmux existance
-  command: which tmux
-  changed_when: false
-  register: tmux_status
-
-- include: ubuntu.yml
-  when: ansible_distribution == 'Ubuntu'
-
-- include: macosx.yml
+- name: Install tmux on Mac OS X
   when: ansible_distribution == 'MacOSX'
+  homebrew:
+    name: tmux
+    state: present
 
-- include: alpine.yml
+- name: Install tmux on Ubuntu
+  when: ansible_distribution == 'Ubuntu'
+  apt:
+    name: tmux
+    state: present
+
+- name: Install tmux on Alpine Linux
   when: ansible_distribution == 'Alpine'
+  apk:
+    name: tmux
+    state: present
 
 - name: Upload tmux config file
   copy:

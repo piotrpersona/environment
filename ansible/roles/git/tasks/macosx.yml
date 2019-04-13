@@ -1,5 +1,0 @@
----
-- name: Install git on Mac OS X
-  command: brew install git
-  become: true
-  when: git_status is failed

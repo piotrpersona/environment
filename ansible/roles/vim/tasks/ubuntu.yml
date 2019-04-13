@@ -1,5 +1,0 @@
----
-- name: Install vim on Debian/Ubuntu
-  when: vim_status is failed
-  command: apt-get install -y vim
-  become: true

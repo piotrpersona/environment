@@ -1,14 +1,18 @@
 ---
-- name: Check git existance
-  command: which git
-  changed_when: false
-  register: git_status
-
-- include: ubuntu.yml
-  when: ansible_distribution == 'Ubuntu'
-
-- include: macosx.yml
+- name: Install git on Mac OS X
   when: ansible_distribution == 'MacOSX'
+  homebrew:
+    name: git
+    state: present
 
-- include: alpine.yml
+- name: Install git on Ubuntu
+  when: ansible_distribution == 'Ubuntu'
+  apt:
+    name: git
+    state: present
+
+- name: Install git on Alpine Linux
   when: ansible_distribution == 'Alpine'
+  apk:
+    name: git
+    state: present

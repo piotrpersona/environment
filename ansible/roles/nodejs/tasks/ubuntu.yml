@@ -1,4 +1,0 @@
----
-- name: Install Node.js on Debian/Ubuntu
-  when: nodejs_status is failed
-  command: sudo apt-get install -y nodejs

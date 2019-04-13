@@ -1,5 +1,0 @@
----
-- name: Install git on Alpine
-  command: apk add git
-  become: true
-  when: git_status.rc is failed

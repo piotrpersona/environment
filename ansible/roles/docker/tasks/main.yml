@@ -1,14 +1,16 @@
 ---
-- name: Check Docker existance
-  command: which docker
-  changed_when: false
-  register: docker_status
+
+- name: Install Docker on Mac OS X
+  when: ansible_distribution == 'MacOSX'
+  homebrew:
+    name: docker
+    state: present
 
 - include: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
 
-- include: macosx.yml
-  when: ansible_distribution == 'MacOSX'
-
-- include: alpine.yml
+- name: Install Docker on Alpine Linux
   when: ansible_distribution == 'Alpine'
+  apk:
+    name: docker
+    state: present
