@@ -3,7 +3,7 @@ language: python
 python: "2.7"
 sudo: required
 os:
-  - ubuntu
+  - osx
 install:
   - pip install ansible
 services:
@@ -11,5 +11,9 @@ services:
 jobs:
   include:
     - stage: deploy
-      name: Deploy on localhost
+      name: Deploy on Mac OS X
       script: ./setup.sh
+
+    - stage: test
+      name: Test other distros
+      script: ./tests/test.sh
