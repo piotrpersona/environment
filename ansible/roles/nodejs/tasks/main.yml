@@ -3,7 +3,7 @@
   when: ansible_distribution == 'MacOSX'
   homebrew:
     name:
-      - node
+      - nodejs
       - npm
     state: present
 
@@ -19,6 +19,6 @@
   when: ansible_distribution == 'Alpine'
   apk:
     name:
-      - nodes
+      - nodejs
       - npm
     state: present
