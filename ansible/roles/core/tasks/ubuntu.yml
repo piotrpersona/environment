@@ -1,17 +1,17 @@
 ---
 - name: Install packages to allow apt to use a repository over HTTPS
   shell: |
-    sudo apt-get update \
-    && sudo apt-get install -y \
+    apt-get update \
+    && apt-get install -y \
     apt-transport-https \
     ca-certificates \
     software-properties-common
-    
+
 - name: Update apt-get
-  shell: sudo apt-get update
+  shell: apt-get update
 
 - name: Install curl
-  shell: sudo apt-get install -y curl
+  shell: apt-get install -y curl
 
 - name: Install wget
-  shell: sudo apt-get install -y wget
+  shell: apt-get install -y wget
