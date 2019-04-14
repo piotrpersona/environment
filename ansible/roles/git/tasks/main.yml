@@ -1,18 +1,5 @@
 ---
-- name: Install git on Mac OS X
-  when: ansible_distribution == 'MacOSX'
-  homebrew:
-    name: git
-    state: present
-
-- name: Install git on Ubuntu
-  when: ansible_distribution == 'Ubuntu'
-  apt:
-    name: git
-    state: present
-
-- name: Install git on Alpine Linux
-  when: ansible_distribution == 'Alpine'
-  apk:
+- name: Install git
+  package:
     name: git
     state: present

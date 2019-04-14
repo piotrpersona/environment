@@ -1,19 +1,6 @@
 ---
-- name: Install tmux on Mac OS X
-  when: ansible_distribution == 'MacOSX'
-  homebrew:
-    name: tmux
-    state: present
-
-- name: Install tmux on Ubuntu
-  when: ansible_distribution == 'Ubuntu'
-  apt:
-    name: tmux
-    state: present
-
-- name: Install tmux on Alpine Linux
-  when: ansible_distribution == 'Alpine'
-  apk:
+- name: Install tmux
+  package:
     name: tmux
     state: present
 

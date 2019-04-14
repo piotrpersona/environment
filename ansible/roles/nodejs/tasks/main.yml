@@ -1,23 +1,6 @@
 ---
-- name: Install Node.js on Mac OS X
-  when: ansible_distribution == 'MacOSX'
-  homebrew:
-    name:
-      - nodejs
-      - npm
-    state: present
-
-- name: Install Node.js on Ubuntu
-  when: ansible_distribution == 'Ubuntu'
-  apt:
-    name:
-      - nodejs
-      - npm
-    state: present
-
-- name: Install Node.js on Alpine Linux
-  when: ansible_distribution == 'Alpine'
-  apk:
+- name: Install Node.js
+  package:
     name:
       - nodejs
       - npm

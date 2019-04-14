@@ -4,6 +4,3 @@
 
 - include: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
-
-- include: alpine.yml
-  when: ansible_distribution == 'Alpine'

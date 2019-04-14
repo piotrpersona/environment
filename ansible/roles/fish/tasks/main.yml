@@ -1,19 +1,6 @@
 ---
-- name: Install fish on Mac OS X
-  when: ansible_distribution == 'MacOSX'
-  homebrew:
-    name: fish
-    state: present
-
-- name: Install fish on Ubuntu
-  when: ansible_distribution == 'Ubuntu'
-  apt:
-    name: fish
-    state: present
-
-- name: Install fish on Alpine Linux
-  when: ansible_distribution == 'Alpine'
-  apk:
+- name: Install fish
+  package:
     name: fish
     state: present
 

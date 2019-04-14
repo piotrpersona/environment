@@ -1,4 +1,0 @@
----
-- name: Update apk
-  shell: apk update
-  become: true

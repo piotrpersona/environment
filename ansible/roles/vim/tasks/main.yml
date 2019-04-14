@@ -1,19 +1,6 @@
 ---
-- name: Install vim on Mac OS X
-  when: ansible_distribution == 'MacOSX'
-  homebrew:
-    name: vim
-    state: present
-
-- name: Install vim on Ubuntu
-  when: ansible_distribution == 'Ubuntu'
-  apt:
-    name: vim
-    state: present
-
-- name: Install vim on Alpine Linux
-  when: ansible_distribution == 'Alpine'
-  apk:
+- name: Install vim
+  package:
     name: vim
     state: present
 
