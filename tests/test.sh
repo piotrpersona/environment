@@ -6,16 +6,6 @@ PROJECT_ROOT="$( git rev-parse --show-toplevel )"
 SCRIPT_PATH="${PROJECT_ROOT}/tests"
 DISTROS=( $( ls "${SCRIPT_PATH}/docker" ) )
 
-handle_args() {
-    IDEMPOTENCY=0
-
-    while [[ "${#}" -gt 0 ]]; do
-        case "${1}" in
-            -i|--idempotency) IDEMPOTENCY=1; shift 1;;
-        esac
-    done
-}
-
 build_distro_image() {
     local distro="${1}"
     local distro_image="${2}"
@@ -39,20 +29,23 @@ run_tests() {
 
     docker exec -it "${container_name}" sh -c '/project/setup.sh'
 
-    if [[ "${IDEMPOTENCY}" -eq 1 ]]; then
-        # local temp_out_file="/tmp/${container_name}.log"
-        # docker exec -it "${container_name}" sh -c '/project/setup.sh' \
-        #     > 2>&1 | tee "${temp_out_file}"
+    # local temp_out_file="/tmp/${container_name}.log"
+    # docker exec -it "${container_name}" sh -c '/project/setup.sh' \
+    # 2>&1 "${temp_out_file}" | tee "${temp_out_file}"
 
-        # changed="( tail -10 "${temp_out}" \
-        #     | gsed -n 's/.*changed\=\([0-9]\+\).*/\1/p'
-        # echo "$changed"
-    fi
+    # local changed="$( tail -10 "${temp_out_file}" | \
+    #     grep -Po '(?<=changed=)[0-9]+' )"
+
+    # echo "***************************** "
+    # [[ "${changed}" -ne "0" ]] \
+    #     && echo "NOT IDEMPOTENT" \
+    #     || echo "IDEMPOTENT"
+    # echo "***************************** "
+
+    docker rm -f "${container_name}"
 }
 
 main() {
-    handle_args "${@}"
-
     for distro in "${DISTROS[@]}"; do
         distro_image="${distro}-environment"
         build_distro_image "${distro}" "${distro_image}"
@@ -60,4 +53,4 @@ main() {
     done
 }
 
-main "${@}"
+main
