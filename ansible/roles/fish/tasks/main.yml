@@ -24,5 +24,10 @@
 
 - name: Upload fish configuration
   copy:
-    src: fish
-    dest: "{{ fish_config_directory }}"
+    src: "{{ item }}"
+    dest: "{{ fish_config_directory }}/{{ item }}"
+  with_items:
+    - config.fish
+    - functions/
+    - fish_variables
+    - README.md
