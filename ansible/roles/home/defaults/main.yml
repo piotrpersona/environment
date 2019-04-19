@@ -1,0 +1,6 @@
+---
+home_working_directories:
+  - developer
+  - work
+  - .config
+  - .ssh

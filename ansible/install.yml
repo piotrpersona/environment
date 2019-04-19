@@ -2,6 +2,8 @@
 - name: Setup developers environment
   hosts: environment
   roles:
+    - role: home
+      tags: core
     - role: core
       tags: core
     - role: git
