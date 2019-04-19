@@ -6,3 +6,12 @@ set -x ALACRITTY_CFG $HOME/.config/alacritty/alacritty.yml
 # Go
 set -x GOPATH $HOME/go
 set -x PATH $PATH:$GOPATH/bin
+
+# Aliases
+
+alias l='ls -lah'
+alias im='cd ~/work/integrated-monitoring'
+alias work='cd ~/work'
+alias dev='cd ~/developer'
+alias bpy='bpython'
+
