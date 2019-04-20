@@ -1,4 +1,9 @@
 ---
+- name: Prepare alacritty config directory
+  file:
+    path: "{{ alacritty_config_path | dirname }}"
+    state: directory
+
 - name: Set alacritty color scheme
   set_fact:
     alacritty_color_scheme: "{{ alacritty_gruvbox_dark_scheme }}"
@@ -6,4 +11,4 @@
 - name: Upload alacritty configuration file
   template:
     src: alacritty.yml.j2
-    dest: ~/.config/alacritty/alacritty.yml
+    dest: "{{ alacritty_config_path }}"
