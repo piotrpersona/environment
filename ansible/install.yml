@@ -37,3 +37,8 @@
       tags:
         - fish
         - shell
+    - role: alacritty
+      tags:
+        - alacritty
+        - terminal
+        - ide
