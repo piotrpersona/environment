@@ -31,6 +31,10 @@ Configure environment
 ./setup.sh --inventory <PATH TO INVENTORY FILE>
 ```
 
+```bash
+ansible-playbook ansible/install.yml -i <PATH TO INVENTORY>
+```
+
 ## Example inventory
 
 ```ini
