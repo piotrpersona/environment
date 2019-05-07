@@ -14,4 +14,4 @@ alias im='cd ~/work/integrated-monitoring'
 alias work='cd ~/work'
 alias dev='cd ~/developer'
 alias bpy='bpython'
-
+alias distro='cat /etc/*-release'
