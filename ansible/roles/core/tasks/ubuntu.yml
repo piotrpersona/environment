@@ -7,11 +7,9 @@
     ca-certificates \
     software-properties-common
 
-- name: Update apt-get
-  shell: apt-get update
-
-- name: Install curl
-  shell: apt-get install -y curl
-
-- name: Install wget
-  shell: apt-get install -y wget
+- name: Install http client packages
+  package:
+    name:
+      - wget
+      - curl
+    state: present
