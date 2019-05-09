@@ -12,6 +12,7 @@ display_help() {
   echo
   echo "Configure developers environment"
   echo "Usage:"
+  echo "  ${0} [OPTIONS...] [ANSIBLE_ARGS...]"
   echo "  -i --inventory        Path to inventory to play with"
   echo "  -h --help             Display help message"
   echo
@@ -23,7 +24,8 @@ handle_args() {
   while [[ "${#}" -gt 0 ]]; do
     case "${1}" in
       -i|--inventory) INVENTORY="${2}"; shift 2;;
-      -h|--help) display_help; exit 1;;
+      -h|--help) display_help; exit 0;;
+      *) break;;
     esac
   done
 
@@ -73,14 +75,17 @@ setup_environment() {
 
   ansible-playbook \
   -i "${INVENTORY}" \
-  "${ANSIBLE_HOME}/install.yml"
+  "${ANSIBLE_HOME}/install.yml" "${@}"
 }
 
 main() {
-  handle_args "${@}"
+  local regular_args="${@}"
+  handle_args "${regular_args}"
   check_prerequsites
   check_ansible
-  setup_environment
+
+  local ansible_args="${@}"
+  setup_environment "${ansible_args}"
 }
 
 main "${@}"
