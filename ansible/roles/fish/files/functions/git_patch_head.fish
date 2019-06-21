@@ -1,5 +1,5 @@
 function git_patch_head
-  NON_FIXUP_HEAD_COMMIT="$(
+  set NON_FIXUP_HEAD_COMMIT "(
     git log --oneline
     | grep --invert-match 'fixup'
     | head -1
