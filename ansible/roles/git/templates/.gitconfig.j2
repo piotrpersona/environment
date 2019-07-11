@@ -1,0 +1,51 @@
+[user]
+    name = {{ git_user.name }}
+    email = {{ git_user.email }}
+    username = {{ git_user.username }}
+
+[core]
+    editor = {{ git_core.editor }}
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+
+[alias]
+    #############
+    br = branch
+    bname = rev-parse --abbrev-ref HEAD
+    #############
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    cd = commit --amend
+    #############
+    cl = clone
+    #############
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+    #############
+    l = log --oneline
+    lg = log --oneline --graph --decorate
+    #############
+    o = checkout
+    om = checkout master
+    ob = checkout -b
+    #############
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase --interactive
+    rbs = rebase --skip
+    #############
+    re = reset
+    rh = reset HEAD
+    reh = reset --hard
+    rem = reset --mixed
+    res = reset --soft
+    rehh = reset --hard HEAD
+    remh = reset --mixed HEAD
+    resh = reset --soft HEAD
+    rehom = reset --hard origin/master
+    #############
+    s = status

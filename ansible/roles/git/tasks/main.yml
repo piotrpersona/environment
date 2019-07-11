@@ -3,3 +3,8 @@
   package:
     name: git
     state: present
+
+- name: Configure git
+  template:
+    src: .gitconfig.j2
+    dest: ~/.gitconfig
