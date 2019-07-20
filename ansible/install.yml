@@ -1,6 +1,5 @@
 ---
 - name: Setup developers environment
-  gather_facts: false
   hosts: environment
   roles:
     - role: home
