@@ -1,0 +1,8 @@
+---
+fzf_home: ~/.fzf
+fzf_install_args:
+  - --key-bindings
+  - --completion
+  - --update-rc
+  - --no-bash
+  - --no-zsh

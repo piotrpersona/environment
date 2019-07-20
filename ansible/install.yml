@@ -42,3 +42,8 @@
         - alacritty
         - terminal
         - ide
+    - role: fzf
+      tags:
+        - fzf
+        - shell
+        - fuzzysearch
