@@ -53,3 +53,6 @@
         - fzf
         - shell
         - fuzzysearch
+    - role: gotop
+      tags:
+        - gotop
