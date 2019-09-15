@@ -3,18 +3,24 @@
   hosts: environment
   roles:
     - role: home
-      tags: core
+      tags:
+        - core
     - role: core
-      tags: core
+      tags:
+        - core
     - role: git
-      tags: git
+      tags:
+        - git
+        - core
+        - ide
     - role: vim
       tags:
         - vim
         - editor
         - ide
     - role: tmux
-      tags: tmux
+      tags:
+        - tmux
     - role: nodejs
       tags:
         - nodejs
