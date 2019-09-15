@@ -76,7 +76,7 @@ setup_environment() {
 
   ansible-playbook \
   -i "${INVENTORY}" \
-  "${ANSIBLE_HOME}/install.yml" ${@}
+  "${ANSIBLE_HOME}/environment.yml" ${@}
 }
 
 main() {
