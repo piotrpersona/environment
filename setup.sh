@@ -41,12 +41,13 @@ check_prerequsites() {
 
   local prerequisites=(
     python
+    pip
   )
 
   local total_status=0
 
   for prerequisite in "${prerequisites[@]}"; do
-    local status="$( which "${prerequisite}" )"
+    local status="$( which "${prerequisite}" )" || :
 
     if [[ "${status}" == "" ]]; then
       echo "ERROR: No such prerequisite: ${prerequisite}"
@@ -61,7 +62,7 @@ check_prerequsites() {
 }
 
 check_ansible() {
-  ansible_existance=$( which ansible )
+  ansible_existance="$( which ansible )" || :
   if [[ "${ansible_existance}" == "" ]]; then
     echo "WARNING: Ansible was not installed"
     echo "INFO: Installing Ansible version: ${ANSIBLE_VERSION}"
