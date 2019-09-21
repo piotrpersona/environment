@@ -56,3 +56,7 @@
     - role: gotop
       tags:
         - gotop
+    - role: bpython
+      tags:
+        - bpython
+        - ide
