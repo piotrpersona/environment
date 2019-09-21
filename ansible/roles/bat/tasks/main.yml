@@ -1,0 +1,5 @@
+---
+- name: Install bat
+  package:
+    name: bat
+    state: present
