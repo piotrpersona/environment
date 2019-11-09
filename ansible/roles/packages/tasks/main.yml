@@ -1,0 +1,8 @@
+---
+- name: Install packages
+  package:
+    name:
+      - bat
+      - bpython
+      - git-flow
+    state: present
