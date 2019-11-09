@@ -15,3 +15,6 @@ alias work='cd ~/work'
 alias dev='cd ~/developer'
 alias bpy='bpython'
 alias distro='cat /etc/*-release'
+
+# History
+set -x HISTTIMEFORMAT "%d/%m/%y %T "
