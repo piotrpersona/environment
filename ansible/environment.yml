@@ -56,11 +56,9 @@
     - role: gotop
       tags:
         - gotop
-    - role: bpython
-      tags:
-        - bpython
-        - ide
-    - role: bat
+    - role: packages
       tags:
         - bat
+        - git-flow
+        - bpython
         - ide
