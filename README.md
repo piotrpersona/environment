@@ -7,45 +7,24 @@ What if you forget about something? What if you lose your environment?
 The best way to eliminate this issues is to store your
 whole environment in a cloud and automate process of installation and configuration.
 
+## Install
+
+Install environment packages
+
+```bash
+git clone https://github.com/piotrpersona/environment.git && ./environment/install.sh
+```
+
+
+```bash
+./install.sh
+```
+
+```bash
+ansible-playbook ansible/environment.yml
+```
+
 
 ## Supported Operating Systems
 
 * Mac OS X
-* Ubuntu
-* Alpine Linux
-
-## Dependencies
-
-* python 2
-* ansible 2.7.10 (*optional*)
-
-## Usage
-
-Configure environment
-
-```bash
-./setup.sh
-```
-
-```bash
-./setup.sh --inventory <PATH TO INVENTORY FILE>
-```
-
-```bash
-ansible-playbook ansible/install.yml -i <PATH TO INVENTORY>
-```
-
-## Example inventory
-
-```ini
-[environment]
-localhost ansible_connection=local
-```
-
-## Testing
-
-Below command will run tests on supported linux distros.
-
-```bash
-./tests/test.sh
-```
