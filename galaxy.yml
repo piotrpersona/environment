@@ -1,7 +1,0 @@
----
-roles:
-- src: gantsign.golang
-- src: taktus.fzf
-
-collections:
-- name: kubernetes.core
