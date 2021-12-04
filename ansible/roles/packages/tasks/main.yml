@@ -6,4 +6,8 @@
       - bpython
       - git-flow
       - pgcli
+      - fzf
     state: present
+
+- name: Configure fzf
+  command: /usr/local/opt/fzf/install

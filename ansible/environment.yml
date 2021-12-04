@@ -31,4 +31,5 @@
         - bat
         - git-flow
         - bpython
+        - fzf
         - ide
