@@ -7,6 +7,16 @@
       - git-flow
       - pgcli
       - fzf
+      - mongocli
+      - cowsay
+      - grep
+      - jq
+      - kcat
+      - kubectx
+      - thefuck
+      - tree
+      - vegeta
+      - yq
     state: present
 
 - name: Configure fzf

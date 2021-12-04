@@ -29,7 +29,19 @@
     - role: packages
       tags:
         - bat
-        - git-flow
         - bpython
+        - git-flow
+        - pgcli
         - fzf
+        - mongocli
+        - cowsay
+        - grep
+        - jq
+        - kcat
+        - kubectx
+        - redis-cli
+        - thefuck
+        - tree
+        - vegeta
+        - yq
         - ide
