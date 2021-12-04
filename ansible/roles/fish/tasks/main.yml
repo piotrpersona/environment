@@ -4,12 +4,6 @@
     name: fish
     state: present
 
-- name: Add fish to shells
-  become: true
-  lineinfile:
-    path: /etc/shells
-    line: /usr/local/bin/fish
-
 - name: Create fish configuration directory
   file:
     path: "{{ fish_config_directory }}"
