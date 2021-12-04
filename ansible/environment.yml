@@ -1,6 +1,7 @@
 ---
 - name: Setup developers environment
-  hosts: environment
+  hosts: localhost
+  connection: local
   roles:
     - role: home
       tags:
@@ -21,41 +22,10 @@
     - role: tmux
       tags:
         - tmux
-    - role: nodejs
-      tags:
-        - nodejs
-        - language
-    - role: docker
-      tags:
-        - docker
-        - containers
-    - role: code
-      tags:
-        - code
-        - editor
-        - ide
-    - role: golang
-      tags:
-        - golang
-        - go
-        - language
     - role: fish
       tags:
         - fish
         - shell
-    - role: alacritty
-      tags:
-        - alacritty
-        - terminal
-        - ide
-    - role: fzf
-      tags:
-        - fzf
-        - shell
-        - fuzzysearch
-    - role: gotop
-      tags:
-        - gotop
     - role: packages
       tags:
         - bat

@@ -4,6 +4,16 @@
     name: fish
     state: present
 
+- name: Add fish to shells
+  become: true
+  lineinfile:
+    path: /etc/shells
+    line: /usr/local/bin/fish
+
+- name: Set fish as default shell
+  become: true
+  command: chsh -s /usr/local/bin/fish
+
 - name: Create fish configuration directory
   file:
     path: "{{ fish_config_directory }}"

@@ -5,4 +5,5 @@
       - bat
       - bpython
       - git-flow
+      - pgcli
     state: present
