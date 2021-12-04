@@ -17,6 +17,7 @@
       - tree
       - vegeta
       - yq
+      - gh
     state: present
 
 - name: Configure fzf
