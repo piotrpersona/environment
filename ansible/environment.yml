@@ -1,5 +1,5 @@
 ---
-- name: Setup developers environment
+- name: Configure development environment
   hosts: localhost
   connection: local
   roles:
@@ -46,3 +46,9 @@
         - yq
         - ide
         - gh
+    - role: zsh
+      tags:
+        - ide
+    - role: code
+      tags:
+        - ide
