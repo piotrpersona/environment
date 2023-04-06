@@ -18,6 +18,12 @@
       - vegeta
       - yq
       - gh
+      - neovim
+      - fzf
+      - ca-certificates
+      - cjson
+      - netcat
+      - net-tools
     state: present
 
 - name: Configure fzf

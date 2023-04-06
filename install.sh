@@ -27,7 +27,7 @@ installPython() {
 }
 
 installAnsible() {
-    ansible -v || pip3 install ansible
+    ansible -v || brew install ansible
 }
 
 runPlaybook() {
