@@ -14,8 +14,9 @@
         - git
         - core
         - ide
-    - role: vim
+    - role: nvim
       tags:
+        - nvim
         - vim
         - editor
         - ide
