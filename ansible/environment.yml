@@ -20,13 +20,17 @@
         - vim
         - editor
         - ide
+    - role: alacritty
+      tags:
+        - alacritty
+        - terminal
     - role: tmux
       tags:
         - tmux
-    - role: fish
-      tags:
-        - fish
-        - shell
+#    - role: fish
+#      tags:
+#        - fish
+#        - shell
     - role: packages
       tags:
         - bat
@@ -50,6 +54,8 @@
     - role: zsh
       tags:
         - ide
+        - zsh
     - role: code
       tags:
+        - code
         - ide

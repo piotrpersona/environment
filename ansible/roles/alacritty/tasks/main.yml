@@ -1,0 +1,6 @@
+---
+- name: Upload alacritty config file
+  copy:
+    src: alacritty.yaml
+    dest: ~/.config/alacritty/alacritty.yaml
+
