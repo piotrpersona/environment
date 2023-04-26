@@ -8,3 +8,9 @@
   template:
     src: .gitconfig.j2
     dest: ~/.gitconfig
+
+- name: Copy ~/.gitignore
+  file:
+    src: .gitignore
+    dest: ~/.gitignore
+  ignore_errors: true

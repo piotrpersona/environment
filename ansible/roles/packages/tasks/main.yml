@@ -23,8 +23,4 @@
       - ca-certificates
       - cjson
       - netcat
-      - net-tools
     state: present
-
-- name: Configure fzf
-  command: /usr/local/opt/fzf/install

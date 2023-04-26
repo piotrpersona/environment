@@ -1,8 +1,0 @@
----
-git_user:
-  name: Piotr Persona
-  email: persona.piotr@gmail.com
-  username: piotrpersona
-
-git_core:
-  editor: vim

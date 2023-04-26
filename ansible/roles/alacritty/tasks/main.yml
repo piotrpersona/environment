@@ -1,4 +1,9 @@
 ---
+- name: Create alacritty directory
+  file:
+    path: ~/.config/alacritty
+    state: directory
+
 - name: Upload alacritty config file
   copy:
     src: alacritty.yaml
