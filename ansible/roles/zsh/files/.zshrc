@@ -129,7 +129,7 @@ alias gca="git commit -asm"
 alias ga="git add"
 alias gaa="git add ."
 alias gp="git push"
-alias gpa="git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags"
+alias gpa='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags'
 alias gm="git merge"
 alias gch="git checkout"
 alias gb="git branch"
@@ -137,11 +137,13 @@ alias gba="git branch -a"
 alias gl="git log"
 alias gs="git status"
 alias gf="git fetch --all --tags"
-alias gpl="git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)"
+alias gpl='git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)'
 
 # RUST
-source $HOME/.cargo/env
-export CARGO_NET_GIT_FETCH_WITH_CLI=true
+# source $HOME/.cargo/env
+# export CARGO_NET_GIT_FETCH_WITH_CLI=true
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias v='nvim'
