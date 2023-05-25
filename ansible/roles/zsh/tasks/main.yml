@@ -1,8 +1,0 @@
----
-- name: Upload .zshrc config file
-  copy:
-    src: .zshrc
-    dest: ~/.zshrc
-
-- name: Install auto suggestions
-  shell: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

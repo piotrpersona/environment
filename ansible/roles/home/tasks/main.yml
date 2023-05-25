@@ -1,6 +1,0 @@
----
-- name: Create working directiories
-  file:
-    path: "~/{{ item }}"
-    state: directory
-  with_items: "{{ home_working_directories }}"
