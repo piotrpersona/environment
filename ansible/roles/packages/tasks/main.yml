@@ -1,6 +1,7 @@
 ---
 - name: Install packages
   package:
+    state: present
     name:
       - bat
       - bpython
@@ -23,4 +24,4 @@
       - ca-certificates
       - cjson
       - netcat
-    state: present
+      - k9s

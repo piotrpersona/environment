@@ -9,28 +9,12 @@
     - role: core
       tags:
         - core
-    - role: git
-      tags:
-        - git
-        - core
-        - ide
     - role: nvim
       tags:
         - nvim
         - vim
         - editor
         - ide
-    - role: alacritty
-      tags:
-        - alacritty
-        - terminal
-    - role: tmux
-      tags:
-        - tmux
-#    - role: fish
-#      tags:
-#        - fish
-#        - shell
     - role: packages
       tags:
         - bat
@@ -51,10 +35,6 @@
         - yq
         - ide
         - gh
-    - role: zsh
-      tags:
-        - ide
-        - zsh
     - role: code
       tags:
         - code

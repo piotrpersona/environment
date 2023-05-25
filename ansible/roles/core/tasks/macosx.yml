@@ -5,6 +5,7 @@
   failed_when: false
   register: homebrew_status
 
+
 - name: Install homebrew
   shell: |
     /usr/bin/ruby -e \

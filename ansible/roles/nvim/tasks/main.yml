@@ -4,14 +4,6 @@
     name: nvim
     state: present
 
-- name: Upload .vimrc config file
-  copy:
-    src: init.vim
-    dest: ~/.config/nvim
-
-- name: Install plugins
-  shell: nvim +'PlugInstall --sync' +qa
-
 - name: Install vim Plug
   shell: |
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
