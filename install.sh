@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 main() {
-    dirs=( tmux nvim zsh git alacritty )
+    dirs=( core tmux nvim zsh git alacritty )
+
+    if [[ "${1}" == "brew" ]]; then
+        dirs+=( brew )
+    fi
+
     for dir in "${dirs[@]}"; do
         echo ">>>>>>>> Installing ${dir}"
         "./${dir}/install.sh" || echo "Error installing ${dir}"
