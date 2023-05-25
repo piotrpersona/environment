@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-install_ansible() {
-    ./ansible/install.sh
-}
-
-install_nvim() {
-    ./nvim/install.sh
-}
-
 main() {
-   install_ansible 
-   install_nvim
+    dirs=( tmux nvim zsh git alacritty )
+    for dir in "${dirs[@]}"; do
+        echo ">>>>>>>> Installing ${dir}"
+        "./${dir}/install.sh" || echo "Error installing ${dir}"
+        echo "<<<<<<<< Done!"
+        echo
+    done
 }
 
 main "${@}"
-
