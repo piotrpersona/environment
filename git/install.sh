@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-cp -f "$( dirname ${0})/.gitconfig" "${HOME}/.gitconfig"
+GITCONFIG="${HOME}/.gitconfig"
+[[ -e "${GITCONFIG}" ]] || cp -f "$( dirname ${0})/.gitconfig" "${GITCONFIG}"
+
