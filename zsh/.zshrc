@@ -88,3 +88,4 @@ export PATH=$PATH:$HOME/.cargo/bin
 # zsh
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#aaaaaa'
