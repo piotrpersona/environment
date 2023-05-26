@@ -48,7 +48,8 @@ alias kgpo='kubectl get po'
 alias kdpo='kubectl describe po'
 
 # git aliases
-alias gc="git commit -sm"
+alias gc="git commit"
+alias gcm="git commit -sm"
 alias gca="git commit -asm"
 alias ga="git add"
 alias gaa="git add ."
