@@ -13,6 +13,8 @@ key_bindings:
   - { key: H,        mods: Alt,     chars: "\x1bh"                                                                                                  }
   - { key: L,        mods: Alt,     chars: "\x1bl"                                                                                                  }
   - { key: F,        mods: Command, chars: "find ~/developer ~/work -not -path \"*/.git/*\"  -type d | fzf\n"                                       }
+  - { key: S,        mods: Command, chars: "tms switch\n"                                                                                           }
+  - { key: O,        mods: Command, chars: "tms\n"                                                                                                  }
   - { key: Right, mods: Alt, chars: "\x1BF" }
   - { key: Left,  mods: Alt, chars: "\x1BB" }
 

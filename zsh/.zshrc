@@ -42,6 +42,7 @@ alias distro='cat /etc/*-release'
 # History
 export HISTTIMEFORMAT="%d/%m/%y %T "
 alias k='kubectl'
+alias kt='kubetail'
 alias kg='kubectl get'
 alias kd='kubectl describe'
 alias kgpo='kubectl get po'
@@ -71,9 +72,15 @@ alias gcam='git commit --amend'
 # export CARGO_NET_GIT_FETCH_WITH_CLI=true
 
 
+# UTILS
+alias uuid="python3 -c \"import uuid; print(uuid.uuid4(), end='')\""
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias v='nvim'
+
+# SPOS
+export EDITOR='nvim'
 
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
