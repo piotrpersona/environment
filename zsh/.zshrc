@@ -47,6 +47,8 @@ alias kg='kubectl get'
 alias kd='kubectl describe'
 alias kgpo='kubectl get po'
 alias kdpo='kubectl describe po'
+alias kgpof='kubectl describe po $(kubectl get po | tail -n +2 | fzf awk "{print $1}") | bat -lyml'
+alias kgpoy='kubectl get po -o yaml $(kubectl get po | tail -n +2 | fzf awk "{print $1}") | bat -lyml'
 
 # git aliases
 alias gc="git commit"
