@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-cp -f "$( dirname ${0})/.zshrc" "$HOME/.zshrc"
+ls "$HOME/.zshrc" || cp -f "$( dirname ${0})/.zshrc" "$HOME/.zshrc"
+cp -f "$( dirname ${0})/.zsh_aliases.sh" "$HOME/.zsh_aliases.sh"
