@@ -25,6 +25,7 @@ alias ga="git add"
 alias gaa="git add ."
 alias gp="git push"
 alias gpa='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags'
+alias gpaf='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags --force'
 alias gm="git merge"
 alias gch="git checkout"
 alias gb="git branch"
