@@ -1,7 +1,7 @@
 font:
   # Point size
   normal:
-    family: Fira Code
+    family: Menlo
   size: 13.0
 
 shell:

@@ -54,3 +54,5 @@ export PATH=$PATH:$HOME/.cargo/bin
 # zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#aaaaaa'
+# Allow to define custom aliases
+[ -f ~/.zsh_aliases_custom ] && source ~/.zsh_aliases_custom

@@ -28,18 +28,21 @@ alias gpa='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags'
 alias gpaf='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags --force'
 alias gm="git merge"
 alias gch="git checkout"
-alias gb="git branch"
+alias gbr="git branch"
 alias gba="git branch -a"
 alias gl="git log"
 alias gs="git status"
 alias gf="git fetch --all --tags"
 alias gpl='git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcane='git commit --amend --no-edit'
+alias gcanef='git commit --amend --no-edit && git push -u origin $(git rev-parse --abbrev-pref HEAD) --tags --force'
 alias gcam='git commit --amend'
 alias gsq="git rebase -i --autosquash $( git merge-base HEAD origin/main )"
 
 
 alias uuid="python3 -c \"import uuid; print(uuid.uuid4(), end='')\""
+
+alias gitignore="curl -fsSL https://www.toptal.com/developers/gitignore/api/$1"
 
 
 
