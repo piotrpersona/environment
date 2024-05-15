@@ -1,5 +1,5 @@
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
-
+m
 alias l='ls -lah'
 alias work='cd ~/work'
 alias dev='cd ~/developer'
@@ -43,6 +43,8 @@ alias gsq="git rebase -i --autosquash $( git merge-base HEAD origin/main )"
 alias uuid="python3 -c \"import uuid; print(uuid.uuid4(), end='')\""
 
 alias gitignore="curl -fsSL https://www.toptal.com/developers/gitignore/api/$1"
+
+alias mkgit="mkdir -p $1; cd $1; git init -b main"
 
 
 
