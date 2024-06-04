@@ -25,7 +25,7 @@ alias ga="git add"
 alias gaa="git add ."
 alias gp="git push"
 alias gpa='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags'
-alias gpaf='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags --force'
+alias gpaf='git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags --force-with-lease'
 alias gm="git merge"
 alias gch="git checkout"
 alias gbr="git branch"
@@ -35,7 +35,7 @@ alias gs="git status"
 alias gf="git fetch --all --tags"
 alias gpl='git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)'
 alias gcane='git commit --amend --no-edit'
-alias gcanef='git commit --amend --no-edit && git push -u origin $(git rev-parse --abbrev-pref HEAD) --tags --force'
+alias gcanef='git commit --amend --no-edit && git push -u origin $(git rev-parse --abbrev-pref HEAD) --tags --force-with-lease'
 alias gcam='git commit --amend'
 alias gsq="git rebase -i --autosquash $( git merge-base HEAD origin/main )"
 
