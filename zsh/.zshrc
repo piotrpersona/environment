@@ -34,6 +34,8 @@ export PATH=$PATH:$GOPATH/bin
 # Aliases
 
 source ~/.zsh_aliases.sh
+# local aliases sepcific to the machine
+[ -f ~/.zsh_aliases.local.sh ] && source ~/.zsh_aliases.local.sh
 
 # RUST
 # source $HOME/.cargo/env
