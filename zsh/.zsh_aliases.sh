@@ -47,7 +47,7 @@ alias gitignore="curl -fsSL https://www.toptal.com/developers/gitignore/api/$1"
 alias mkgit="mkdir -p $1; cd $1; git init -b main"
 
 
-
+alias mkconda="conda create -n $1 -c conda-forge python=${2:-3.12} pynvim jupyter pip opencv-python"
 
 
 alias v='nvim'
