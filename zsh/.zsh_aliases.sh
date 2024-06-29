@@ -38,6 +38,7 @@ alias gcane='git commit --amend --no-edit'
 alias gcanef='git commit --amend --no-edit && git push -u origin $(git rev-parse --abbrev-ref HEAD) --tags --force-with-lease'
 alias gcam='git commit --amend'
 alias gsq="git rebase -i --autosquash $( git merge-base HEAD origin/main )"
+alias grs="git restore --staged ."
 
 
 alias uuid="python3 -c \"import uuid; print(uuid.uuid4(), end='')\""
