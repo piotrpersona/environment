@@ -10,5 +10,8 @@ local config = wezterm.config_builder()
 config.color_scheme = 'Banana Blueberry'
 config.font = wezterm.font 'FiraCode Nerd Font Mono'
 
+-- Option key as Alt
+config.send_composed_key_when_left_alt_is_pressed = true
+
 -- and finally, return the configuration to wezterm
 return config
