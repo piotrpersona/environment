@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 main() {
+    git submodule foreach git pull origin
+
     dirs=( core tmux nvim zsh git alacritty fonts wezterm )
 
     if [[ "${1}" == "brew" ]]; then

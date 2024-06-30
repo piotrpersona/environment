@@ -14,7 +14,7 @@ config.font = wezterm.font 'FiraCode Nerd Font Mono'
 config.send_composed_key_when_left_alt_is_pressed = true
 
 -- Forbig replacing != for ≠
-config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 -- and finally, return the configuration to wezterm
 return config
