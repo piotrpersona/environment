@@ -58,3 +58,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#aaaaaa'
 # Allow to define custom aliases
 [ -f ~/.zsh_aliases_custom ] && source ~/.zsh_aliases_custom
+
+# https://stackoverflow.com/questions/12382499/looking-for-altleftarrowkey-solution-in-zsh
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
