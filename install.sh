@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-    dirs=( core tmux nvim zsh git alacritty fonts )
+    dirs=( core tmux nvim zsh git alacritty fonts wezterm )
 
     if [[ "${1}" == "brew" ]]; then
         dirs+=( brew )
