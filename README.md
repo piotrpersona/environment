@@ -12,7 +12,6 @@ Install environment packages
 git clone https://github.com/piotrpersona/environment.git && ./environment/install.sh
 ```
 
-
 ```bash
 ./install.sh
 ```
