@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
 plugins=(
     git
@@ -36,6 +36,8 @@ export PATH=$PATH:$GOPATH/bin
 source ~/.zsh_aliases.sh
 # local aliases sepcific to the machine
 [ -f ~/.zsh_aliases.local.sh ] && source ~/.zsh_aliases.local.sh
+# local prompt
+[ -f ~/prompt.sh ] && source ~/prompt.sh
 
 # RUST
 # source $HOME/.cargo/env
@@ -99,5 +101,5 @@ precmd() {
     fi
 }
 
-export PROMPT='(${STATUS_COLOR}${STATUS}${RESET}) ${BLUE}%1~${RESET}${GIT_REV} $ '
+PROMPT='(${STATUS_COLOR}${STATUS}${RESET}) ${BLUE}%1~${RESET}${GIT_REV} $ '
 
