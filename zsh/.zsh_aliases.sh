@@ -18,6 +18,7 @@ alias kdpof='kubectl describe po $(kubectl get po | tail -n +2 | fzf | awk '{pri
 alias kgpoy='kubectl get po -o yaml $(kubectl get po | tail -n +2 | fzf | awk '{print $1}') | bat -lyml'
 
 # git aliases
+alias g="git"
 alias gc="git commit"
 alias gcm="git commit -sm"
 alias gca="git commit -asm"
