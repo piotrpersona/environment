@@ -41,6 +41,7 @@ alias gcanef='git commit --amend --no-edit && git push -u origin $(git rev-parse
 alias gcam='git commit --amend'
 alias gsq="git rebase -i --autosquash $( git merge-base HEAD origin/main )"
 alias grs="git restore --staged ."
+alias ghome="cd $( git rev-parse --show-toplevel )"
 
 
 alias uuid="python3 -c \"import uuid; print(uuid.uuid4(), end='')\""
