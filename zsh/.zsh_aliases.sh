@@ -49,7 +49,11 @@ alias uuid="python3 -c \"import uuid; print(uuid.uuid4(), end='')\""
 
 alias gitignore="curl -fsSL https://www.toptal.com/developers/gitignore/api/$1"
 
-alias mkgit="mkdir -p $1; cd $1; git init -b main"
+function mkgit() {
+    mkdir -p $1
+    git init $1 -b main
+}
+alias mkgit="mkgit" 
 
 
 alias mkconda="conda create -c conda-forge python=3.12 pynvim jupyter pip opencv-python -y -n $1"
