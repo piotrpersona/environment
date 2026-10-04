@@ -34,10 +34,7 @@ Re-running is safe. An existing real file at a link target is moved aside as
 | `git` | global `.gitignore` and `git config` |
 | `gh` | GitHub CLI config, aliases, extensions, auth check |
 | `tmux` | `.tmux.conf` |
-| `alacritty` | `~/.config/alacritty/alacritty.toml` |
-| `wezterm` | `~/.wezterm.lua` |
 | `grc` | `~/.grc/grc.conf`, `~/.grc/conf.gotest` |
-| `code` | VS Code `settings.json` (skipped if VS Code is absent) |
 
 Machine-local shell additions go in `~/.zsh_aliases.local.sh`, which
 `.zshrc` sources if it exists and which is never tracked.

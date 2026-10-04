@@ -39,8 +39,8 @@ gh/extensions       gh extensions, "owner/repo"
   `gh alias set` precisely because `~/.config/gh/hosts.yml` holds the auth
   token. Anything machine-specific goes in an untracked `*.local.sh`, which
   `.zshrc` sources if present.
-- A module must be safe to re-run and must skip, not fail, when its tool is
-  absent (see `code/install.sh`).
+- A module must be safe to re-run, and must skip with `say` and `exit 0`
+  rather than fail when the tool it configures is not installed.
 - Package lists are plain text, one entry per line, parsed with `read_list`.
   Add to the list; do not inline a package name in a script.
 - **Always update the "Tool reference" tables in `README.md` when adding or

@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+### Removed — alacritty, wezterm and code modules
+
+Ghostty is the terminal now, so the `alacritty` and `wezterm` modules are
+gone, and the `code` module with them. `./install.sh --list` is down to nine
+modules.
+
+- Alacritty and WezTerm were not installed on this machine, so their links
+  were simply removed. `~/.config/alacritty` is left in place: it still holds
+  an older `alacritty.yml` and a `.bak` that predate this repo.
+- VS Code **is** installed and its `settings.json` was a symlink into
+  `code/`. Deleting the module would have left it dangling and lost the
+  settings, so the file was first replaced with a real copy of the same
+  content. VS Code keeps its config; this repo no longer tracks it.
+- `fonts/fonts` keeps `font-fira-code-nerd-font`: `ghostty/config` still names
+  that font.
+- `CLAUDE.md` said a module should skip when its tool is absent and pointed at
+  `code/install.sh` as the example. That was the only module with the pattern,
+  so the rule now states it inline instead of pointing at a deleted file.
+
 ### Removed — 11 formulae and the ollama cask
 
 Pruned from `brew/packages` so a work machine does not get them:
