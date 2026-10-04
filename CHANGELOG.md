@@ -8,12 +8,21 @@ CMD+Space, `log`, Enter opens a Ghostty window running `nvim` on
 `~/notes/<date>_<time>.md` in insert mode. `note` does the same in the current
 terminal, `note --window` in a new one.
 
-- `notes/Log.app` is a hand-rolled bundle: `Info.plist` plus a launcher that
-  execs `~/.local/bin/note`. Both are symlinked out of the repo like every
-  other config here, so editing `notes/note.sh` changes what Spotlight runs.
+- `~/Applications/Log.app` is a hand-rolled bundle, created by the installer
+  as a real directory holding three symlinks into `notes/app/`: `Info.plist`,
+  a launcher that execs `~/.local/bin/note`, and `Log.icns`. Editing
+  `notes/note.sh` still changes what Spotlight runs.
+- The bundle directory is deliberately not itself a symlink. Spotlight does
+  not index symlinks, so a symlinked `Log.app` was only ever found at its real
+  path inside this repo, and an app under `~/developer` ranks below one in
+  `~/Applications`.
 - The launcher goes through `$HOME/.local/bin/note` rather than a path
-  relative to itself, because `..` from inside a symlinked bundle resolves
-  against the link, not the repo.
+  relative to itself, because `..` from inside a bundle that may be reached
+  through a link resolves against the link, not the repo.
+- The icon is generated: `notes/icon.py` renders a wood-grain squircle on
+  Apple's 824-of-1024 grid (numpy and Pillow, run through `uv`), and
+  `iconutil` builds `notes/app/Log.icns` from it. `notes/icon.png` is the
+  intermediate and is gitignored.
 - `zsh/.zshrc` now puts `~/.local/bin` on PATH; it was only there via
   untracked machine-local files.
 - The app is named "Log" and the command `note`: an app called "Note" loses to

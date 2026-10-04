@@ -75,11 +75,23 @@ note --window     # in a new Ghostty window, like Log.app does
 NOTES_DIR=~/work/notes note
 ```
 
-`~/Applications/Log.app` is a two-file bundle (`Info.plist` and a launcher
-that execs `~/.local/bin/note`), both symlinked out of `notes/`. The app is
-called "Log" because an app named "Note" loses to Apple's Notes.app in
-Spotlight, and the command is called `note` because macOS already ships
+`~/Applications/Log.app` is a real directory holding three symlinks into
+`notes/app/`: `Info.plist`, a launcher that execs `~/.local/bin/note`, and the
+icon. The bundle itself is not a symlink because Spotlight does not index
+symlinks, and an app found under `~/developer` ranks below one in
+`~/Applications`.
+
+The app is called "Log" because an app named "Note" loses to Apple's Notes.app
+in Spotlight, and the command is called `note` because macOS already ships
 `/usr/bin/log`.
+
+The icon is generated, not drawn: `notes/icon.py` renders a wood-grain
+squircle with numpy and Pillow through `uv`, and `iconutil` turns it into
+`notes/app/Log.icns`.
+
+```bash
+cd notes && uv run --with pillow --with numpy python icon.py
+```
 
 ## Supported operating systems
 
