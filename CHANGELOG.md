@@ -97,9 +97,9 @@ Two consequences of that gap, both pre-existing: `~/.fzf.zsh` fails on every
 shell start because `fzf` is absent, and the `grc` config now installed has no
 `grc` binary to read it.
 
-`ghostty` is in `brew/cask` and `/Applications/Ghostty.app` exists, but brew
-does not manage it — it was installed by hand. `brew install --cask ghostty`
-will adopt it.
+`ghostty` was installed by hand and unmanaged; `brew install --adopt --cask`
+took it over. `--adopt` is cask-only, so `brew/install.sh` passes it only for
+casks — with `--formula` it is not a valid flag.
 
 ### nvim
 
@@ -162,3 +162,19 @@ last. Two knock-on failures this explains:
 
 `zsh/install.sh` now detects that it replaced a real `~/.zshrc` and prints the
 `diff` command to review the backup, so the next machine is not caught out.
+
+## Fonts cleanup
+
+The old `fonts/install.sh` had installed every Nerd Font: **2067 files,
+8.0 GB** in `~/Library/Fonts`, none of it brew-managed. That also blocked
+`font-fira-code-nerd-font` from installing, since brew will not adopt a font
+whose existing copy differs — the files on disk were from April 2024.
+
+Removed all 2060 `*NerdFont*` files and reinstalled just
+`font-fira-code-nerd-font` through the cask, so the one family the terminal
+configs name is now brew-managed and updates with `brew upgrade`.
+
+Result: **8.0 GB -> 50 MB**, 25 files. Kept the six plain `FiraCode-*.ttf`
+and the hand-patched `Monocraft-nerd-fonts-patched.ttf`, none of which came
+from the bulk install. `FiraCode Nerd Font Mono` 3.5.1 is registered with the
+system and `ghostty +validate-config` passes.
