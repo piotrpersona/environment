@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-WEZ_HOME="${HOME}"
-cp -f "$( dirname ${0})/.wezterm.lua" "${WEZ_HOME}/.wezterm.lua"
+source "$(dirname -- "${BASH_SOURCE[0]}")/../lib.sh"
+
+link wezterm/.wezterm.lua "${HOME}/.wezterm.lua"

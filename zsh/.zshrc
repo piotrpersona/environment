@@ -34,8 +34,6 @@ export PATH=$PATH:$GOPATH/bin
 # Aliases
 
 source ~/.zsh_aliases.sh
-# local aliases sepcific to the machine
-[ -f ~/.zsh_aliases.local.sh ] && source ~/.zsh_aliases.local.sh
 # local prompt
 [ -f ~/prompt.sh ] && source ~/prompt.sh
 
@@ -58,8 +56,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 # zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#aaaaaa'
-# Allow to define custom aliases
-[ -f ~/.zsh_aliases_custom ] && source ~/.zsh_aliases_custom
 
 # https://stackoverflow.com/questions/12382499/looking-for-altleftarrowkey-solution-in-zsh
 bindkey "^[[1;3C" forward-word
@@ -103,3 +99,8 @@ precmd() {
 
 PROMPT='(${STATUS_COLOR}${STATUS}${RESET}) ${BLUE}%1~${RESET}${GIT_REV} $ '
 
+# Machine-local config: aliases, exports, PATH, tool init. Untracked, sourced
+# last so it overrides anything above. Work and personal machines differ here
+# and nowhere else in this repo.
+[ -f ~/.zsh_aliases.local.sh ] && source ~/.zsh_aliases.local.sh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-ALA_HOME="${HOME}/.config/alacritty"
-mkdir -p "${ALA_HOME}"
-cp -f "$( dirname ${0})/alacritty.toml" "${ALA_HOME}/alacritty.toml"
+source "$(dirname -- "${BASH_SOURCE[0]}")/../lib.sh"
+
+link alacritty/alacritty.toml "${HOME}/.config/alacritty/alacritty.toml"

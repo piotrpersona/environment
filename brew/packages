@@ -1,26 +1,59 @@
+# Homebrew formulae, one per line. # comments and blank lines are ignored.
+
+# shell and search
+the_silver_searcher
 bat
-bpython
-git-flow
-pgcli
 fzf
-mongocli
-cowsay
-grep
-jq
-ag
-kcat
-kubectx
-thefuck
-tree
-vegeta
-yq
-gh
-neovim
-fzf
-ca-certificates
-netcat
-k9s
 grc
-luarocks
+grep
+ripgrep
+tree
+thefuck
+
+# editor and build
 cmake
+luarocks
+neovim
+
+# git and GitHub
+gh
+git-flow
+
+# runtimes
+asdf
+
+# containers
+colima
+docker
+docker-buildx
+docker-compose
+docker-credential-helper
+
+# kubernetes
+k9s
+kubectx
+
+# data and APIs
+jq
+yq
+kcat
+mongocli
+pgcli
+vegeta
+
+# files and sessions
 yazi
+tmux-sessionizer
+
+# ai
+ollama
+rtk
+
+# system
+ca-certificates
+macmon
+netcat
+
+# misc
+bpython
+cowsay

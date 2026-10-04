@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-mkdir -p ~/.grc
-cp -f "$(dirname ${0})/grc.conf" "${HOME}/.grc/grc.conf"
-cp -f "$(dirname ${0})/conf.gotest" "${HOME}/.grc/conf.gotest"
+source "$(dirname -- "${BASH_SOURCE[0]}")/../lib.sh"
 
+link grc/.grc.conf    "${HOME}/.grc/grc.conf"
+link grc/conf.gotest  "${HOME}/.grc/conf.gotest"

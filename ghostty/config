@@ -1,0 +1,21 @@
+# Ghostty. Settings mirror alacritty/alacritty.toml and wezterm/.wezterm.lua so
+# all three terminals behave the same.
+
+# Ayu Mirage. Ships with Ghostty (Contents/Resources/ghostty/themes/Ayu Mirage)
+# from the same iTerm2-Color-Schemes upstream terminalcolors.com publishes, so
+# the palette is the canonical one: background #1f2430, foreground #cccac2,
+# cursor #ffcc66.
+theme = Ayu Mirage
+
+font-family = FiraCode Nerd Font Mono
+font-size = 13
+
+# Ligatures off, matching wezterm's harfbuzz_features = calt=0, clig=0, liga=0.
+# Keeps != from rendering as a single glyph.
+font-feature = -calt
+font-feature = -clig
+font-feature = -liga
+
+# Option as Alt, matching alacritty's option_as_alt = "Both". Makes the
+# bindkey "^[[1;3C"/"^[[1;3D" word-motions in .zshrc work.
+macos-option-as-alt = true

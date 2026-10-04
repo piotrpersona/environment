@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
+source "$(dirname -- "${BASH_SOURCE[0]}")/../lib.sh"
 
-cp -f "$(dirname ${0})/.tmux.conf" "${HOME}/.tmux.conf"
-
+link tmux/.tmux.conf "${HOME}/.tmux.conf"

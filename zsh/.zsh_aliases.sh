@@ -45,7 +45,7 @@ alias grs="git restore --staged ."
 alias ghome="cd $( git rev-parse --show-toplevel )"
 
 
-alias uuid="python3 -c \"import uuid; print(uuid.uuid4(), end='')\""
+alias uuid='TMP_UUID=$(python3 -c "import uuid; print(uuid.uuid7())") && echo "$TMP_UUID" && echo -n "$TMP_UUID" | pbcopy'
 
 alias gitignore="curl -fsSL https://www.toptal.com/developers/gitignore/api/$1"
 
@@ -55,5 +55,3 @@ function mkgit() {
 }
 alias mkgit="mkgit" 
 
-
-alias mkconda="conda create -c conda-forge python=3.12 pynvim jupyter pip opencv-python -y -n $1"

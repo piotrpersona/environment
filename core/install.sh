@@ -1,7 +1,25 @@
 #!/usr/bin/env bash
-brew  -v || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Bootstrap: Homebrew, the directory layout and the macOS key-repeat settings.
+source "$(dirname -- "${BASH_SOURCE[0]}")/../lib.sh"
 
-mkdir -p ~/work ~/developer ~/.ssh
+if ! have brew; then
+    say "installing Homebrew"
+    NONINTERACTIVE=1 /bin/bash -c \
+        "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
-defaults write -g InitialKeyRepeat -int 12 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+# brew is not on PATH yet during a first install
+if ! have brew && [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+have brew || die "Homebrew install failed"
+say "brew   $(brew --version | head -1)"
+
+mkdir -p -- "${HOME}/work" "${HOME}/developer"
+mkdir -p -m 700 -- "${HOME}/.ssh"
+
+if [ "$(uname -s)" = Darwin ]; then
+    defaults write -g InitialKeyRepeat -int 12  # minimum is 15 (225ms)
+    defaults write -g KeyRepeat -int 1          # minimum is 2 (30ms)
+    say "keyboard repeat rate set (re-login to apply)"
+fi

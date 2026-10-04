@@ -1,0 +1,7 @@
+# gh aliases: "<name> = <expansion>", one per line.
+# A name that is already a gh command or extension is skipped with a warning.
+co = pr checkout
+prs = pr list --author @me
+prv = pr view --web
+repos = repo list --limit 50
+watch = run watch
