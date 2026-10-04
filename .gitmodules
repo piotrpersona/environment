@@ -4,5 +4,5 @@
 	branch = main
 [submodule "agents"]
 	path = agents
-	url = https://github.com/piotrpersona/agents.git
+	url = git@github.com:piotrpersona/agents.git
 	branch = main

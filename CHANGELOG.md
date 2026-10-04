@@ -131,11 +131,21 @@ Added as a submodule and synced to `f36a931`. Its own `install.sh` detects
 that it is being run from inside a clone and relinked `~/.claude/rules`,
 `~/.claude/hooks` and `~/.claude/statusline.sh` to this submodule.
 
-Those links previously pointed at a standalone clone at
-`~/developer/github.com/piotrpersona/agents`, which is now redundant. There
-are two clones of the same repo on disk; the standalone one is no longer
-linked from `~/.claude` and can be removed. `settings.json` was regenerated
-and backed up to `settings.json.20261004-094845.bak`.
+Its `install.sh` also symlinks `skills/`, so `intent-masking`, `gitclone` and
+`mkgit` now resolve through the submodule.
+
+The standalone clone at `~/developer/github.com/piotrpersona/agents` was
+deleted once it held nothing unique: its HEAD was an ancestor of `origin/main`,
+no stashes, no untracked non-ignored files, and the only standalone-only files
+were regenerable local tool state (`.serena/`, `.claude/` local, `.codex/`).
+`~/.claude` was re-linked to the submodule first and every link verified to
+resolve. `settings.json` was regenerated and backed up to
+`settings.json.20261004-094845.bak`.
+
+The submodule URL is SSH, matching `nvim`, the parent repo and
+`gh config git_protocol`. It was added over HTTPS, which made
+`git push` from inside `agents/` fail with
+`could not read Username for 'https://github.com'`.
 
 ## Migration note — read before syncing another machine
 
