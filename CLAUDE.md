@@ -45,9 +45,9 @@ gh/extensions       gh extensions, "owner/repo"
   Add to the list; do not inline a package name in a script.
 - **Always update the "Tool reference" tables in `README.md` when adding or
   removing a tool.** They are the fast lookup for what this machine has, so a
-  new entry in `brew/packages`, `brew/cask`, `fonts/fonts`, `gh/aliases` or
-  `zsh/.zsh_aliases.sh` needs its row in the same commit. One sentence per
-  row, columns `tool | description`. A tool with no row is a bug.
+  new entry in `brew/packages`, `brew/cask`, `fonts/fonts`, `uv/tools`,
+  `gh/aliases` or `zsh/.zsh_aliases.sh` needs its row in the same commit. One
+  sentence per row, columns `tool | description`. A tool with no row is a bug.
 - `brew` and `fonts` are opt-in (`OPT_IN` in `install.sh`) because they
   download a lot. Keep anything slow or large opt-in.
 - Check syntax with `bash -n` on every script touched, and prefer

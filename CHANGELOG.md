@@ -2,6 +2,36 @@
 
 ## Unreleased
 
+### Added — `uv` module: SkyPilot and other Python CLIs
+
+`skypilot` is installed, so `sky` runs GPU jobs on Kubernetes or a cloud. The
+list is `uv/tools`, one `uv tool install` spec per line, extras included.
+
+- Installed with `uv tool install`, not brew: there is no skypilot formula, and
+  a uv tool gets its own isolated virtualenv with just the `sky` shim on PATH.
+- The extra is `[kubernetes]`, because `kubectl` is the only cloud tooling on
+  this machine. Add `aws`, `gcp` and friends to the spec and re-run when a
+  cloud account is in play.
+- The module does not install uv itself. uv lives in `~/.local/bin` from its
+  own installer and updates with `uv self update`, so a brew copy would only
+  shadow it; the module skips with the install command instead.
+
+### Added — `tms` module: tmux-sessionizer search paths
+
+`tms` now searches the three places repos actually live, each at the depth the
+workspace layout puts them: `~/developer/projects` (1), `~/developer/github.com`
+(2) and `~/work` (2). The list is `tms/paths`, one `<path> <depth>` per line.
+
+- Applied with `tms config`, not by symlinking the config file: tms owns
+  `~/Library/Application Support/tms/config.toml` and rewrites it whenever a
+  bookmark, mark or session config changes. Same reason as the `gh` module.
+- The old settings had never taken effect. They sat in
+  `~/Library/Application Support/rs.tms/default-config.toml`, which a tms
+  before 0.6 read; 0.6 reads `.../tms/config.toml` and renamed `search_paths`
+  to `search_dirs`, so the stale file was ignored in full — including its
+  `display_full_path = true` — and tms fell back to its defaults. The dead
+  file is left in place, untouched.
+
 ### Added — `notes` module: Spotlight-launchable scratch notes
 
 CMD+Space, `log`, Enter opens a Ghostty window running `nvim` on

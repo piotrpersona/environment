@@ -34,6 +34,8 @@ Re-running is safe. An existing real file at a link target is moved aside as
 | `git` | global `.gitignore` and `git config` |
 | `gh` | GitHub CLI config, aliases, extensions, auth check |
 | `tmux` | `.tmux.conf` |
+| `tms` | tmux-sessionizer search paths from `tms/paths` |
+| `uv` | Python CLI tools from `uv/tools` |
 | `grc` | `~/.grc/grc.conf`, `~/.grc/conf.gotest` |
 | `notes` | the `note` command and `Log.app`, the Spotlight note launcher |
 
@@ -100,8 +102,9 @@ macOS.
 ## Tool reference
 
 Fast lookup for everything this repo installs or defines. **Keep it in sync:**
-adding a tool to `brew/packages`, `brew/cask`, `fonts/fonts`, `gh/aliases` or
-an alias to `zsh/.zsh_aliases.sh` means adding its row here in the same commit.
+adding a tool to `brew/packages`, `brew/cask`, `fonts/fonts`, `uv/tools`,
+`gh/aliases` or an alias to `zsh/.zsh_aliases.sh` means adding its row here in
+the same commit.
 
 ### Brew formulae
 
@@ -144,6 +147,14 @@ Source: `brew/cask` and `fonts/fonts`; both are opt-in behind `--brew`.
 | `ghostty` | GPU-accelerated terminal, configured by the `ghostty` module. |
 | `libreoffice` | Office suite. |
 | `font-fira-code-nerd-font` | The font every terminal config here names. |
+
+### uv tools
+
+Source: `uv/tools`; installed with `uv tool install`, not brew.
+
+| tool | description |
+| --- | --- |
+| `skypilot` | Runs GPU jobs and clusters on clouds or Kubernetes (`sky`). |
 
 ### Shell aliases
 

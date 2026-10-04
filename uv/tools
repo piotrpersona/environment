@@ -1,0 +1,6 @@
+# Python CLI tools installed with `uv tool install`, one install spec per line.
+# A spec may carry extras, e.g. skypilot[aws,gcp], and is passed to uv as-is.
+
+# kubernetes: the only cloud tooling on this machine is kubectl. Add aws, gcp,
+# azure, runpod ... here when a cloud account is in play, then re-run.
+skypilot[kubernetes]

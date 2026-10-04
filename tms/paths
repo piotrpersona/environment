@@ -1,0 +1,5 @@
+# tms search paths, one per line: <path> <max depth>
+# Depth is how far below the path a git repo sits, per the workspace layout.
+~/developer/projects 1
+~/developer/github.com 2
+~/work 2
