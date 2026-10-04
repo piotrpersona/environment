@@ -29,6 +29,9 @@ fi
 
 export PATH=$PATH:/opt/homebrew/bin
 
+# Where the notes module links `note`, and where uv and pipx put their shims.
+export PATH=$HOME/.local/bin:$PATH
+
 # Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Spotlight entry point. The bundle may be reached through a symlink, so ".."
+# from here is not the repo - go through the installed command instead.
+exec "${HOME}/.local/bin/note" --window

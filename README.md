@@ -30,11 +30,12 @@ Re-running is safe. An existing real file at a link target is moved aside as
 | `core` | Homebrew, `~/work`, `~/developer`, `~/.ssh`, key repeat rate |
 | `brew` | formulae from `brew/packages`, casks from `brew/cask` (opt-in) |
 | `fonts` | Nerd Font casks from `fonts/fonts` (opt-in) |
-| `zsh` | `.zshrc`, `.zsh_aliases.sh`, `prompt.sh` |
+| `zsh` | `.zshrc`, `.zsh_aliases.sh` |
 | `git` | global `.gitignore` and `git config` |
 | `gh` | GitHub CLI config, aliases, extensions, auth check |
 | `tmux` | `.tmux.conf` |
 | `grc` | `~/.grc/grc.conf`, `~/.grc/conf.gotest` |
+| `notes` | the `note` command and `Log.app`, the Spotlight note launcher |
 
 Machine-local shell additions go in `~/.zsh_aliases.local.sh`, which
 `.zshrc` sources if it exists and which is never tracked.
@@ -59,6 +60,26 @@ Both link rather than copy, and both move an existing real file aside as
 `<target>.<stamp>.bak` instead of deleting it. Each repo's `CLAUDE.md` requires
 an agent to diff the live config against the repo and report anything
 destructive **before** running the installer.
+
+## Quick notes
+
+CMD+Space, type `log`, Enter: a new Ghostty window opens `nvim` on
+`~/notes/<date>_<time>.md`, already in insert mode. Quit without writing and
+no file is left behind.
+
+The same thing in the terminal you already have open:
+
+```bash
+note              # in this terminal
+note --window     # in a new Ghostty window, like Log.app does
+NOTES_DIR=~/work/notes note
+```
+
+`~/Applications/Log.app` is a two-file bundle (`Info.plist` and a launcher
+that execs `~/.local/bin/note`), both symlinked out of `notes/`. The app is
+called "Log" because an app named "Note" loses to Apple's Notes.app in
+Spotlight, and the command is called `note` because macOS already ships
+`/usr/bin/log`.
 
 ## Supported operating systems
 
@@ -128,6 +149,15 @@ Source: `zsh/.zsh_aliases.sh`.
 | `uuid` | Generates a UUIDv7 and copies it to the clipboard. |
 | `gitignore` | Fetches a `.gitignore` template from toptal.com. |
 | `mkgit` | Creates a directory and inits a git repo in it on `main`. |
+
+### Commands
+
+Source: `notes/note.sh`, linked to `~/.local/bin/note`.
+
+| tool | description |
+| --- | --- |
+| `note` | Opens nvim on a fresh timestamped note in `~/notes`, in insert mode. |
+| `note --window` | The same in a new Ghostty window; this is what `Log.app` runs. |
 
 ### Git aliases
 

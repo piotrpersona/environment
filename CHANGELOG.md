@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+### Added — `notes` module: Spotlight-launchable scratch notes
+
+CMD+Space, `log`, Enter opens a Ghostty window running `nvim` on
+`~/notes/<date>_<time>.md` in insert mode. `note` does the same in the current
+terminal, `note --window` in a new one.
+
+- `notes/Log.app` is a hand-rolled bundle: `Info.plist` plus a launcher that
+  execs `~/.local/bin/note`. Both are symlinked out of the repo like every
+  other config here, so editing `notes/note.sh` changes what Spotlight runs.
+- The launcher goes through `$HOME/.local/bin/note` rather than a path
+  relative to itself, because `..` from inside a symlinked bundle resolves
+  against the link, not the repo.
+- `zsh/.zshrc` now puts `~/.local/bin` on PATH; it was only there via
+  untracked machine-local files.
+- The app is named "Log" and the command `note`: an app called "Note" loses to
+  Apple's Notes.app in Spotlight, and macOS already ships `/usr/bin/log`.
+- `-c startinsert`, not `+startinsert`: Ghostty's CLI parser treats a leading
+  `+` as one of its own actions and drops the argument.
+- Ghostty 1.2 has no macOS IPC for "new window in the running instance"
+  (`+new-window` is GTK-only), so the window is a second Ghostty instance
+  started with `open -na`. It reads the same config and exits with nvim.
+- The note file is not created up front, so quitting without writing leaves
+  nothing behind.
+
 ### Removed — alacritty, wezterm and code modules
 
 Ghostty is the terminal now, so the `alacritty` and `wezterm` modules are
