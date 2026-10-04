@@ -2,20 +2,6 @@
 
 ## Unreleased
 
-### Added — `skhd` module: `cmd+alt+n` opens a note
-
-A global hotkey, so a note does not depend on how Spotlight ranks `Log.app`.
-`skhd/skhdrc` binds `cmd + alt - n` to `note --window`.
-
-- skhd is deliberately **not** in `brew/packages`. It ships no bottle, so it
-  builds from source, and it lives in `koekeishiya/formulae`, which Homebrew
-  now refuses to load until the formula is trusted by hand. Neither fits a
-  plain one-line package list, so the module prints the three commands and
-  skips instead.
-- The module links its config and exits 0 when skhd is absent, like every
-  other module whose tool may be missing.
-- skhd needs Accessibility permission before any hotkey fires.
-
 ### Added — `notes` module: Spotlight-launchable scratch notes
 
 CMD+Space, `log`, Enter opens a Ghostty window running `nvim` on

@@ -36,7 +36,6 @@ Re-running is safe. An existing real file at a link target is moved aside as
 | `tmux` | `.tmux.conf` |
 | `grc` | `~/.grc/grc.conf`, `~/.grc/conf.gotest` |
 | `notes` | the `note` command and `Log.app`, the Spotlight note launcher |
-| `skhd` | global hotkeys; `cmd+alt+n` opens a note |
 
 Machine-local shell additions go in `~/.zsh_aliases.local.sh`, which
 `.zshrc` sources if it exists and which is never tracked.
@@ -75,20 +74,6 @@ note              # in this terminal
 note --window     # in a new Ghostty window, like Log.app does
 NOTES_DIR=~/work/notes note
 ```
-
-`cmd+alt+n` does the same without Spotlight, through the `skhd` module. skhd
-is not in `brew/packages`: it has no bottle, and it lives in a third-party tap
-that Homebrew makes you trust by hand, so it is a one-off per machine.
-
-```bash
-brew tap koekeishiya/formulae
-brew trust --formula koekeishiya/formulae/skhd
-brew install koekeishiya/formulae/skhd
-./install.sh skhd
-```
-
-It needs Accessibility (System Settings → Privacy & Security → Accessibility)
-before any hotkey fires.
 
 `~/Applications/Log.app` is a real directory holding three symlinks into
 `notes/app/`: `Info.plist`, a launcher that execs `~/.local/bin/note`, and the
@@ -185,7 +170,6 @@ Source: `notes/note.sh`, linked to `~/.local/bin/note`.
 | --- | --- |
 | `note` | Opens nvim on a fresh timestamped note in `~/notes`, in insert mode. |
 | `note --window` | The same in a new Ghostty window; this is what `Log.app` runs. |
-| `cmd+alt+n` | The `skhd` hotkey for `note --window`; source `skhd/skhdrc`. |
 
 ### Git aliases
 

@@ -1,6 +1,0 @@
-# Global hotkeys. skhd runs each command through $SHELL -c, so $HOME expands
-# but nothing else about the login environment is guaranteed.
-
-# Quick note: a new Ghostty window with nvim on ~/notes/<date>_<time>.md, in
-# insert mode. The same thing Log.app does from Spotlight.
-cmd + alt - n : $HOME/.local/bin/note --window
