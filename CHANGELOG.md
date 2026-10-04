@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Fixed — `tmux` is a tracked formula
+
+`tmux` itself was never in `brew/packages`, only `tmux-sessionizer` and the
+`tmux` module that links `.tmux.conf`. On a machine where tmux had not been
+installed by hand, `tms` panicked at startup with
+`Failed to execute the tmux command ["list-sessions", ...]`, because the binary
+it shells out to was absent.
+
 ### Added — `uv` module: SkyPilot and other Python CLIs
 
 `skypilot` is installed, so `sky` runs GPU jobs on Kubernetes or a cloud. The

@@ -35,6 +35,7 @@ pgcli
 
 # files and sessions
 yazi
+tmux
 tmux-sessionizer
 
 # ai

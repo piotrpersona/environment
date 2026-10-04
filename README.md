@@ -134,6 +134,7 @@ Source: `brew/packages`.
 | `yq` | Same idea as jq for YAML, XML, CSV and properties files. |
 | `pgcli` | Postgres client with auto-completion and syntax highlighting. |
 | `yazi` | Fast terminal file manager. |
+| `tmux` | Terminal multiplexer: persistent sessions, splits and windows. |
 | `tmux-sessionizer` | Opens a git repo as a tmux session. |
 | `rtk` | CLI proxy that condenses command output to save LLM tokens. |
 | `ca-certificates` | Mozilla CA certificate store. |
