@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# oh-my-zsh default theme. A custom PROMPT used to override it here and in
+# zsh/prompt.sh; both are gone, so the theme is what you see.
 ZSH_THEME="robbyrussell"
 
 plugins=(
@@ -34,8 +36,6 @@ export PATH=$PATH:$GOPATH/bin
 # Aliases
 
 source ~/.zsh_aliases.sh
-# local prompt
-[ -f ~/prompt.sh ] && source ~/prompt.sh
 
 # RUST
 # source $HOME/.cargo/env
@@ -60,44 +60,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#aaaaaa'
 # https://stackoverflow.com/questions/12382499/looking-for-altleftarrowkey-solution-in-zsh
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
-
-# Prompt
-
-# https://robotmoon.com/zsh-prompt-generator/
-GREEN="%F$(tput setaf 41)"
-YELLOW="%F$(tput setaf 220)"
-BLUE="%F$(tput setaf 33)"
-ERROR="%F$(tput setaf 204)"
-RESET="%f"
-
-git_rev() {
-    git status > /dev/null 2>&1 
-    if [ $? -ne 0 ]; then
-        echo ""
-        return 0
-    fi
-
-    git status | grep detached > /dev/null \
-        && git rev-parse --short HEAD \
-        || git rev-parse --abbrev-ref HEAD
-}
-
-precmd() {
-    export STATUS=$?
-
-    STATUS_COLOR=${GREEN}
-    if [ $STATUS -ne 0 ]; then
-        STATUS_COLOR=${ERROR}
-    fi
-
-    local rev=$( git_rev )
-    GIT_REV=""
-    if [ "${rev}" != "" ]; then
-        GIT_REV=" [${YELLOW}${rev}${RESET}]"
-    fi
-}
-
-PROMPT='(${STATUS_COLOR}${STATUS}${RESET}) ${BLUE}%1~${RESET}${GIT_REV} $ '
 
 # Machine-local config: aliases, exports, PATH, tool init. Untracked, sourced
 # last so it overrides anything above. Work and personal machines differ here

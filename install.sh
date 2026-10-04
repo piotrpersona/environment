@@ -3,11 +3,14 @@
 #
 #   ./install.sh                 sync every module (no brew packages)
 #   ./install.sh --brew          ... and install brew formulae, casks and fonts
-#   ./install.sh zsh nvim        only the named modules
+#   ./install.sh zsh git         only the named modules
 #   ./install.sh --list          show the modules
 #
 # A module is any top-level directory holding an install.sh. Config is
 # symlinked, so re-running this is cheap and safe.
+#
+# nvim and the Claude Code config are separate repos, not modules here. See
+# the "Related repos" section of README.md.
 
 set -euo pipefail
 
@@ -37,12 +40,6 @@ is_opt_in() {
     return 1
 }
 
-sync_submodules() {
-    say "syncing submodules"
-    git submodule sync --recursive
-    git submodule update --init --remote --recursive
-}
-
 run_module() {
     printf '\n>>> %s\n' "${1}"
     if ( ./"${1}"/install.sh ); then
@@ -61,7 +58,7 @@ main() {
         case "${arg}" in
             --brew|brew) with_opt_in=true ;;
             --list) modules; return 0 ;;
-            -h|--help) sed -n '2,12p' "${BASH_SOURCE[0]}"; return 0 ;;
+            -h|--help) sed -n '2,13p' "${BASH_SOURCE[0]}"; return 0 ;;
             -*) die "unknown flag: ${arg}" ;;
             *)  [ -x "${arg}/install.sh" ] || die "not a module: ${arg}"
                 selected+=( "${arg}" ) ;;
@@ -69,7 +66,6 @@ main() {
     done
 
     if [ "${#selected[@]}" -eq 0 ]; then
-        sync_submodules
         # core first: it installs brew, which the other modules rely on.
         selected=( core )
         while read -r m; do

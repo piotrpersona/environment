@@ -1,8 +1,0 @@
-[submodule "nvim"]
-	path = nvim
-	url = git@github.com:piotrpersona/nvim.git
-	branch = main
-[submodule "agents"]
-	path = agents
-	url = git@github.com:piotrpersona/agents.git
-	branch = main

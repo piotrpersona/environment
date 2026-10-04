@@ -10,7 +10,10 @@ had_real_zshrc=false
 
 link zsh/.zshrc          "${HOME}/.zshrc"
 link zsh/.zsh_aliases.sh "${HOME}/.zsh_aliases.sh"
-link zsh/prompt.sh       "${HOME}/prompt.sh"
+
+# The custom prompt is gone; ZSH_THEME in .zshrc drives the prompt now. Clear
+# the link the old installer made, or it dangles forever.
+[ -L "${HOME}/prompt.sh" ] && rm -- "${HOME}/prompt.sh" && say "unlink ${HOME}/prompt.sh"
 
 # .zshrc sources these last if they exist; both stay machine-local and untracked.
 touch -- "${HOME}/.zsh_aliases.local.sh" "${HOME}/.zshrc.local"

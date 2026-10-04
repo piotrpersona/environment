@@ -2,6 +2,69 @@
 
 ## Unreleased
 
+### Changed — nvim and agents are separate repos, not submodules
+
+`nvim` and `agents` were submodules. Both are now fully independent repos,
+cloned to `~/developer/github.com/piotrpersona/<repo>` and installed by their
+own `install.sh`. This repo no longer tracks a pointer to either, so a change
+in one needs no commit here.
+
+- `.gitmodules` removed, both paths deinitialised and `git rm`-ed, and the
+  stale `.git/modules/{nvim,agents}` metadata deleted. Nothing was lost: both
+  were clean and level with `origin/main` (`nvim` at `b4e1779`, `agents` at
+  `37ded35`) before removal.
+- `install.sh` no longer has `sync_submodules`, so a plain `./install.sh` does
+  not run `git submodule update` and `--list` no longer shows `nvim` or
+  `agents` as modules.
+- Live config was repointed **before** the directories were removed, so no
+  symlink ever dangled: `~/.config/nvim` now links to the standalone `nvim`
+  clone, and the ten links under `~/.claude` (5 rules, 1 hook, 3 skills,
+  `statusline.sh`) to the standalone `agents` clone. `settings.json` was
+  already current and was not rewritten.
+- `README.md` gained a "Related repos" section with the clone paths and the
+  standalone bootstrap one-liners.
+
+### Changed — default zsh theme
+
+`ZSH_THEME="robbyrussell"` was already set but never visible: a custom `PROMPT`
+and `precmd` at the bottom of `zsh/.zshrc` overrode it, and `zsh/prompt.sh`
+held a second, slightly different copy of the same prompt that `.zshrc` sourced
+first and then shadowed.
+
+Removed both. The oh-my-zsh default theme now drives the prompt.
+
+- `zsh/prompt.sh` deleted, and `zsh/install.sh` no longer links it. The
+  installer removes a leftover `~/prompt.sh` symlink, so it does not dangle
+  once the repo file is gone; verified idempotent across two runs.
+- 38 lines of prompt code dropped from `zsh/.zshrc`.
+
+### Added — tool reference tables in README
+
+`README.md` ends with a "Tool reference" section: `tool | description` tables
+for every brew formula, cask, font, shell alias, git alias, kubectl alias and
+`gh` alias this repo installs or defines, one sentence each, for fast lookup.
+
+`CLAUDE.md` and `AGENTS.md` now require the tables to be updated in the same
+commit as a change to `brew/packages`, `brew/cask`, `fonts/fonts`, `gh/aliases`
+or `zsh/.zsh_aliases.sh`. Coverage was checked against the source lists: every
+entry has a row.
+
+### Added — agents must check for drift before installing
+
+Each of `piotrpersona/nvim` and `piotrpersona/agents` now carries a
+`CLAUDE.md`, copied to a gitignored `AGENTS.md` for Codex, matching the
+convention in this repo. Both require, before `install.sh` or `sync.sh` runs:
+
+- diff the live config in `$HOME` against the repo — link state, uncommitted
+  work, incoming commits, and for `agents` the `make diff` of `settings.json`
+  plus a link audit that finds real files, retargets, dangling links and
+  orphans;
+- report every destructive action with its recovery path and get approval
+  first. A `.bak` copy is a recovery path, not permission.
+
+The installers already back up rather than delete; the instructions close the
+gap that neither one says what it is about to overwrite.
+
 ### Changed — config is symlinked, not copied
 
 Every module installer now calls `link` from the new `lib.sh` instead of

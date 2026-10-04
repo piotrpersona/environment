@@ -11,7 +11,7 @@ executable `install.sh`. `install.sh` at the root discovers and runs them.
 
 ```
 lib.sh              shared helpers: link, say, warn, die, have, read_list
-install.sh          entry point; syncs submodules then runs each module
+install.sh          entry point; discovers and runs each module
 <module>/install.sh links that module's config into place
 <module>/<config>   the tracked config file
 brew/packages       formulae, one per line
@@ -19,9 +19,10 @@ brew/cask           casks, one per line
 fonts/fonts         Nerd Font casks, one per line
 gh/aliases          gh aliases, "name = expansion"
 gh/extensions       gh extensions, "owner/repo"
-nvim/               submodule, piotrpersona/nvim
-agents/             submodule, piotrpersona/agents (Claude Code config)
 ```
+
+`nvim` and the agent config are **not** here. They are separate repos; see
+"Related repos" in `README.md`.
 
 ## Rules for changes
 
@@ -42,16 +43,24 @@ agents/             submodule, piotrpersona/agents (Claude Code config)
   absent (see `code/install.sh`).
 - Package lists are plain text, one entry per line, parsed with `read_list`.
   Add to the list; do not inline a package name in a script.
+- **Always update the "Tool reference" tables in `README.md` when adding or
+  removing a tool.** They are the fast lookup for what this machine has, so a
+  new entry in `brew/packages`, `brew/cask`, `fonts/fonts`, `gh/aliases` or
+  `zsh/.zsh_aliases.sh` needs its row in the same commit. One sentence per
+  row, columns `tool | description`. A tool with no row is a bug.
 - `brew` and `fonts` are opt-in (`OPT_IN` in `install.sh`) because they
   download a lot. Keep anything slow or large opt-in.
 - Check syntax with `bash -n` on every script touched, and prefer
   `shellcheck` when available.
 - Record user-visible changes in `CHANGELOG.md`.
 
-## Submodules
+## Related repos
 
-`nvim` and `agents` are separate repos. A change inside one is committed and
-pushed **there** first, then the new pointer is committed here. Both ship
-their own `install.sh` and are linked, not copied, so a live edit under
-`~/.config/nvim` or `~/.claude` shows up as a dirty submodule, which is the
-intended signal to commit it.
+`piotrpersona/nvim` and `piotrpersona/agents` used to be submodules here. They
+are now fully separate: cloned to `~/developer/github.com/piotrpersona/<repo>`
+and installed by their own `install.sh`. A change to either needs no commit in
+this repo, and this repo's `install.sh` does not touch them.
+
+Each of those repos carries its own `CLAUDE.md`/`AGENTS.md` requiring an agent
+to diff the live config against the repo and report destructive actions
+**before** running its installer. Follow it; do not run their installers blind.
