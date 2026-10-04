@@ -1,4 +1,4 @@
-alias v='nvim .'
+alias v='nvim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 
 alias l='ls -lah'

@@ -91,30 +91,19 @@ Source: `brew/packages`.
 | `luarocks` | Lua package manager, needed by some nvim plugins. |
 | `neovim` | The editor; its config is the separate `nvim` repo. |
 | `gh` | GitHub CLI, configured by the `gh` module. |
-| `git-flow` | Branching-model helper commands for git. |
 | `asdf` | Version manager for Go, Python, Node and more. |
 | `colima` | Container runtime for macOS, the Docker Desktop replacement. |
 | `docker` | Docker CLI for building and running containers. |
 | `docker-buildx` | Docker CLI plugin for BuildKit builds. |
 | `docker-compose` | Runs multi-container environments from a compose file. |
 | `docker-credential-helper` | Stores Docker registry credentials in the macOS keychain. |
-| `k9s` | Terminal UI for browsing and managing Kubernetes clusters. |
-| `kubectx` | Switches kubectl contexts and namespaces (`kubectx`, `kubens`). |
 | `jq` | Command-line JSON processor; also merges `settings.json` in the agents repo. |
 | `yq` | Same idea as jq for YAML, XML, CSV and properties files. |
-| `kcat` | Kafka producer and consumer for the command line. |
-| `mongocli` | Manages MongoDB Atlas deployments. |
 | `pgcli` | Postgres client with auto-completion and syntax highlighting. |
-| `vegeta` | HTTP load testing tool. |
 | `yazi` | Fast terminal file manager. |
 | `tmux-sessionizer` | Opens a git repo as a tmux session. |
-| `ollama` | Runs local large language models. |
 | `rtk` | CLI proxy that condenses command output to save LLM tokens. |
 | `ca-certificates` | Mozilla CA certificate store. |
-| `macmon` | Sudoless performance monitor for Apple Silicon. |
-| `netcat` | Reads and writes raw TCP and UDP connections. |
-| `bpython` | Python REPL with completion and inline docs. |
-| `cowsay` | Prints a talking cow. |
 
 ### Casks and fonts
 
@@ -124,7 +113,6 @@ Source: `brew/cask` and `fonts/fonts`; both are opt-in behind `--brew`.
 | --- | --- |
 | `ghostty` | GPU-accelerated terminal, configured by the `ghostty` module. |
 | `libreoffice` | Office suite. |
-| `ollama-app` | Desktop front end for Ollama. |
 | `font-fira-code-nerd-font` | The font every terminal config here names. |
 
 ### Shell aliases
@@ -133,12 +121,12 @@ Source: `zsh/.zsh_aliases.sh`.
 
 | tool | description |
 | --- | --- |
-| `v` | Opens nvim in the current directory. |
+| `v` | Opens nvim; takes a path, so `v .` for the directory. |
 | `zshrc` | Edits `~/.zshrc` and re-sources it. |
 | `l` | Long listing including hidden files (`ls -lah`). |
 | `work` | Changes to `~/work`. |
 | `dev` | Changes to `~/developer`. |
-| `bpy` | Starts bpython. |
+| `bpy` | Starts bpython, if it is installed; not in `brew/packages`. |
 | `distro` | Prints the Linux release files. |
 | `uuid` | Generates a UUIDv7 and copies it to the clipboard. |
 | `gitignore` | Fetches a `.gitignore` template from toptal.com. |

@@ -2,6 +2,29 @@
 
 ## Unreleased
 
+### Removed — 11 formulae and the ollama cask
+
+Pruned from `brew/packages` so a work machine does not get them:
+`git-flow`, `k9s`, `kubectx`, `kcat`, `mongocli`, `vegeta`, `ollama`,
+`macmon`, `netcat`, `bpython`, `cowsay`. The now-empty `# kubernetes` and
+`# misc` sections went with them.
+
+`ollama-app` was also dropped from `brew/cask`. It installs the same software
+as the `ollama` formula, so keeping it would have defeated the reason for
+removing it.
+
+Nothing is uninstalled: `brew/install.sh` only installs what is missing, so a
+machine that already has these formulae keeps them. The lists only control
+what a fresh `--brew` run adds.
+
+The `bpy` alias is kept — bpython can still come from `uv` — but its README
+row now says it is not in `brew/packages`.
+
+### Changed — `v` opens nvim, not the current directory
+
+`alias v='nvim .'` forced a directory listing, so a plain file needed the full
+command. It is now `alias v='nvim'`; `v .` still opens the directory.
+
 ### Changed — nvim and agents are separate repos, not submodules
 
 `nvim` and `agents` were submodules. Both are now fully independent repos,

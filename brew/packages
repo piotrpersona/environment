@@ -17,7 +17,6 @@ neovim
 
 # git and GitHub
 gh
-git-flow
 
 # runtimes
 asdf
@@ -29,31 +28,17 @@ docker-buildx
 docker-compose
 docker-credential-helper
 
-# kubernetes
-k9s
-kubectx
-
 # data and APIs
 jq
 yq
-kcat
-mongocli
 pgcli
-vegeta
 
 # files and sessions
 yazi
 tmux-sessionizer
 
 # ai
-ollama
 rtk
 
 # system
 ca-certificates
-macmon
-netcat
-
-# misc
-bpython
-cowsay
